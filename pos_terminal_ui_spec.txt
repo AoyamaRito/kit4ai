@@ -1,0 +1,104 @@
+POS Terminal System UI Design Specification
+===========================================
+
+System: KONBINI STORE POS SYSTEM v3.2
+Terminal Type: Retail Point of Sale
+Screen Size: 80x41 characters
+Target Users: Store cashiers and managers
+
+Core Functions:
+1. Product Scanning and Entry
+   - Barcode scanning support
+   - Manual product code entry
+   - Quantity adjustment
+   - Price lookup and calculation
+
+2. Transaction Management
+   - Real-time subtotal calculation
+   - Automatic tax calculation (10%)
+   - Discount and promotion handling
+   - Customer loyalty points integration
+
+3. Payment Processing
+   - Multiple payment methods support
+     * Cash payments
+     * Credit/Debit cards
+     * IC cards (contactless)
+     * QR code payments
+     * Loyalty points redemption
+   - Card authorization processing
+   - Receipt printing control
+
+4. System Integration
+   - Inventory management sync
+   - Sales reporting
+   - Network connectivity monitoring
+   - Hardware status tracking
+
+Hardware Components:
+- Barcode scanner
+- Card reader (magnetic stripe/chip/contactless)
+- Receipt printer
+- Cash drawer
+- Customer display
+- Network connection
+
+Function Key Operations:
+F1 - Add Item (manual entry)
+F2 - Delete Item (remove from transaction)
+F3 - Apply Discount
+F4 - Points Management
+F5 - Payment Processing
+F6 - Cancel Transaction
+F8 - Manager Functions
+ESC - Logout/Exit
+
+Security Features:
+- Cashier authentication
+- Manager authorization for special functions
+- Transaction logging
+- Secure payment processing
+- Data backup scheduling
+
+UI Layout:
++------------------------------------------------------------------------------+
+|+----------------------------------------------------------------------------+|
+|| KONBINI STORE POS SYSTEM v3.2                            Terminal: 001     ||
+||                       Cashier: TANAKA YUKI               2024-06-15 14:45  ||
+|+----------------------------------------------------------------------------+|
+|                                                                              |
+|  +----------------------------------------------+ +------------------------+ |
+|  |              SALES TRANSACTION               | |         CALCULATION    | |
+|  |                                              | |                        | |
+|  | Item Code    Description        Qty  Price  TotalSubtotal:    2,260     | |
+|  | ------------------------------------------------ Tax (10%):     226     | |
+|  | 4901234567890 Coca Cola 500ml      2   150    300----------             | |
+|  | 4987654321098 Onigiri Salmon       1   180    180TOTAL:     2,486       | |
+|  | 4912345678901 Potato Chips         1   120    120                       | |
+|  | 4956789012345 Green Tea 350ml      1   110    110Points Used:     0     | |
+|  | 4923456789012 Sandwich Ham&Egg     1   250    250Discount:        0     | |
+|  | 4934567890123 Cigarette Pack       1   580    580----------             | |
+|  | 4945678901234 Weekly Magazine      1   400    400Final Total: 2,486     | |
+|  | 4978901234567 AA Batteries 4pk     1   320    320-----------------------+ |
+|  | ------------------------------------------------                          |
+|  |                               8 items  Subtotal:------------------------+ |
+|  |                                              | |       PAYMENT METHOD   | |
+|  |                                     Tax (10%): |                        | |
+|  |                                        TOTAL:| | [ ] Cash               | |
+|  |                                              | | [X] Credit Card        | |
+|  +----------------------------------------------+ | [ ] IC Card            | |
+|                                                   | [ ] QR Code            | |
+|  +----------------------------------------------+ | [ ] Points             | |
+|  |              OPERATIONS                      | |                        | |
+|  |                                              | | Card: **** 1234        | |
+|  | [F1]Add Item [F2]Delete [F3]Discount [F4]Points| Auth: OK               | |
+|  | [F5]Payment  [F6]Cancel  [F8]Manager [ESC]Logout Receipt: Print         | |
+|  +----------------------------------------------+ +------------------------+ |
+|                                                                              |
+|  +-------------------------------------------------------------------------+ |
+|  | Status: Transaction in Progress    Printer: Ready                       | |
+|  | Card Reader: Connected             Cash Drawer: Closed                  | |
+|  | Network: Online                    Last Backup: 14:30                   | |
+|  +-------------------------------------------------------------------------+ |
+|                                                                              |
++------------------------------------------------------------------------------+

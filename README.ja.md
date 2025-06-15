@@ -2,7 +2,26 @@
 
 **🇯🇵 日本語 | [🇺🇸 English README](README.md)**
 
-AIがWebインターフェースを生成するために使用できる、完璧に整列したASCIIアートUI仕様書を作成するための強力なGoベースのツールです。
+AIがWebインターフェースを生成するために使用できる、完璧に整列したASCIIアートUI仕様書を作成するための強力なGoベースのコマンドラインツールです。複数のテンプレート、レスポンシブレイアウト、既存ドキュメントへの直接挿入機能を備えています。
+
+## クイックスタート
+
+```bash
+# デフォルトのエンタープライズダッシュボードを生成
+go run main.go
+
+# コンパクト幅でモバイルUIを作成
+go run main.go --template=mobile --width=60
+
+# ウルトラワイドダッシュボードを生成してカスタムファイルに保存
+go run main.go --template=enterprise --width=120 --output=dashboard.txt
+
+# 既存ドキュメントの25行目にUIを挿入（バックアップ付き）
+go run main.go --template=simple --insert=document.txt:25 --backup
+
+# 全オプションのヘルプを表示
+go run main.go --help
+```
 
 ## デモ - 実際の出力例
 
@@ -75,8 +94,12 @@ Kit4AIは、AIが直接ASCIIアートを作成する際に発生するレイア�
 
 ## 主な機能
 
+- **コマンドラインインターフェース**: テンプレート、幅オプション、ヘルプシステムを備えた完全なCLI
+- **複数テンプレート**: エンタープライズダッシュボード、モバイルインターフェース、シンプルレイアウト
+- **レスポンシブ設計**: 異なるキャンバス幅（60, 72, 80, 100, 120文字）に自動適応
+- **ドキュメント挿入**: 既存ファイルの指定行に直接UI挿入
+- **バックアップサポート**: 既存ファイル変更時の自動バックアップ作成
 - **完璧な整列**: ByteCanvasシステムによりレイアウトのずれを防止
-- **マルチ幅サポート**: 設定可能なキャンバス幅（60, 72, 80, 100, 120文字）
 - **ASCIIフィルター**: 全角文字を自動除去してレイアウトずれを防止
 - **レイヤーシステム**: Z順序による複雑なUI構成
 - **Markdown対応**: ドキュメント埋め込み用に最適化された出力
@@ -159,7 +182,51 @@ go test ./pkg/canvas/...
 
 ## 使用方法
 
-### 基本例
+### コマンドラインインターフェース
+
+Kit4AIは主にコマンドラインツールとして様々なオプションで使用します：
+
+```bash
+# 基本使用法 - デフォルトのエンタープライズUIを生成
+go run main.go
+
+# テンプレート選択
+go run main.go --template=mobile     # モバイルスマートフォンインターフェース
+go run main.go --template=enterprise # 複雑なダッシュボード（デフォルト）
+go run main.go --template=simple     # 基本的な2パネルレイアウト
+
+# 幅設定
+go run main.go --width=60   # コンパクト（モバイル/狭い画面）
+go run main.go --width=72   # 印刷対応（A4）
+go run main.go --width=80   # 標準（レガシー互換）
+go run main.go --width=100  # ワイド（モダンディスプレイ）
+go run main.go --width=120  # ウルトラワイド（大型モニター）
+
+# カスタム出力ファイル
+go run main.go --output=my_dashboard.txt
+
+# ドキュメント挿入
+go run main.go --template=mobile --insert=document.txt:10 --backup
+```
+
+### ドキュメント挿入機能
+
+既存ファイルの指定行に直接UIを挿入：
+
+```bash
+# 25行目にモバイルUIを挿入（バックアップ付き）
+go run main.go --template=mobile --width=60 --insert=readme.txt:25 --backup
+
+# ドキュメント末尾にエンタープライズダッシュボードを挿入
+go run main.go --template=enterprise --insert=design_doc.txt:999
+
+# バックアップなしでシンプルレイアウトを挿入
+go run main.go --template=simple --width=100 --insert=specification.md:15
+```
+
+### プログラム的使用
+
+高度な用途では、Kit4AIをGoライブラリとしても使用できます：
 
 ```go
 package main
@@ -187,27 +254,36 @@ func main() {
 }
 ```
 
-### 複雑なUI例
+## コマンドラインオプション
 
-```go
-// エンタープライズダッシュボードを作成
-canvas.SetConfig(canvas.StandardConfig)
-dashboard := canvas.NewByteCanvas()
+### 基本オプション
 
-// タイトルバー
-dashboard.DrawBox(0, 0, 79, 2)
-dashboard.WriteBytesASCII(2, 1, "ENTERPRISE DASHBOARD v2.1")
+- `--template` - 生成するUIテンプレート（enterprise, mobile, simple）
+- `--width` - キャンバス幅（60, 72, 80, 100, 120）
+- `--output` - 出力ファイル名（デフォルト：自動生成）
+- `--help` - ヘルプ情報を表示
+- `--version` - バージョン情報を表示
 
-// マルチパネルレイアウト
-dashboard.DrawBox(0, 3, 25, 15)  // サイドバー
-dashboard.DrawBox(26, 3, 79, 15) // メインコンテンツ
+### ドキュメント挿入
 
-// 自動ASCIIフィルタリングでコンテンツを追加
-dashboard.WriteBytesASCII(2, 5, "Navigation Menu")
-dashboard.WriteBytesASCII(28, 5, "Analytics Data")
-```
+- `--insert file:line` - 既存ファイルの指定行にUIを挿入
+- `--backup` - 挿入前にバックアップ（.bak）を作成
 
-## API リファレンス
+### テンプレート
+
+- **enterprise** - ナビゲーション、メトリクス、チャート付きの複雑なダッシュボードUI
+- **mobile** - メッセージレイアウト付きスマートフォンインターフェース
+- **simple** - 基本的な2パネルレイアウト
+
+### 幅オプション
+
+- **60** - コンパクト（モバイル/狭い画面）
+- **72** - 印刷対応（A4用紙互換）
+- **80** - 標準（レガシーターミナル互換）
+- **100** - ワイド（モダンディスプレイ）
+- **120** - ウルトラワイド（大型モニター）
+
+## API リファレンス（ライブラリ使用）
 
 ### ByteCanvasメソッド
 

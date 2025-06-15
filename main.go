@@ -1,9 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"flag"
 	"fmt"
 	"os"
+	"strconv"
+	"strings"
 	"kit4ai/pkg/canvas"
 )
 
@@ -13,6 +16,8 @@ func main() {
 		template = flag.String("template", "enterprise", "UI template to generate (enterprise, mobile, simple)")
 		width    = flag.Int("width", 80, "Canvas width (60, 72, 80, 100, 120)")
 		output   = flag.String("output", "", "Output file name (default: auto-generated)")
+		insert   = flag.String("insert", "", "Insert UI into existing file at specified line (format: file:line)")
+		backup   = flag.Bool("backup", false, "Create backup when inserting into existing file")
 		help     = flag.Bool("help", false, "Show help information")
 		version  = flag.Bool("version", false, "Show version information")
 	)
@@ -32,9 +37,13 @@ func main() {
 		fmt.Fprintf(os.Stderr, "  80   Standard (legacy compatible)\n")
 		fmt.Fprintf(os.Stderr, "  100  Wide (modern displays)\n")
 		fmt.Fprintf(os.Stderr, "  120  Ultra-wide (large monitors)\n")
+		fmt.Fprintf(os.Stderr, "\nInsertion:\n")
+		fmt.Fprintf(os.Stderr, "  --insert file:line   Insert UI into existing file at specified line number\n")
+		fmt.Fprintf(os.Stderr, "  --backup             Create backup (.bak) before inserting\n")
 		fmt.Fprintf(os.Stderr, "\nExamples:\n")
 		fmt.Fprintf(os.Stderr, "  %s --template=mobile --width=60\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "  %s --template=enterprise --width=100 --output=dashboard.txt\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "  %s --template=simple --insert=document.txt:10 --backup\n", os.Args[0])
 	}
 	
 	flag.Parse()
@@ -66,21 +75,113 @@ func main() {
 		os.Exit(1)
 	}
 	
+	// Check for insert mode
+	var insertFile string
+	var insertLine int
+	if *insert != "" {
+		parts := strings.Split(*insert, ":")
+		if len(parts) != 2 {
+			fmt.Fprintf(os.Stderr, "Error: Insert format must be 'file:line' (e.g., document.txt:10)\n")
+			os.Exit(1)
+		}
+		insertFile = parts[0]
+		var err error
+		insertLine, err = strconv.Atoi(parts[1])
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error: Invalid line number '%s'\n", parts[1])
+			os.Exit(1)
+		}
+		if insertLine < 1 {
+			fmt.Fprintf(os.Stderr, "Error: Line number must be >= 1\n")
+			os.Exit(1)
+		}
+	}
+	
 	// Generate UI based on template
+	var uiContent string
 	switch *template {
 	case "enterprise":
-		generateEnterpriseUI(*output)
+		uiContent = generateEnterpriseUI(*output, insertFile != "")
 	case "mobile":
-		generateMobileUI(*output)
+		uiContent = generateMobileUI(*output, insertFile != "")
 	case "simple":
-		generateSimpleUI(*output)
+		uiContent = generateSimpleUI(*output, insertFile != "")
 	default:
 		fmt.Fprintf(os.Stderr, "Error: Unknown template '%s'. Use enterprise, mobile, or simple.\n", *template)
 		os.Exit(1)
 	}
+	
+	// Handle insertion if requested
+	if insertFile != "" {
+		err := insertIntoFile(insertFile, insertLine, uiContent, *backup)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error inserting into file: %v\n", err)
+			os.Exit(1)
+		}
+		fmt.Printf("UI inserted into %s at line %d\n", insertFile, insertLine)
+	}
 }
 
-func generateEnterpriseUI(outputFile string) {
+func insertIntoFile(filename string, lineNum int, content string, createBackup bool) error {
+	// Read existing file
+	file, err := os.Open(filename)
+	if err != nil {
+		return fmt.Errorf("cannot open file: %v", err)
+	}
+	defer file.Close()
+	
+	var lines []string
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		lines = append(lines, scanner.Text())
+	}
+	if err := scanner.Err(); err != nil {
+		return fmt.Errorf("error reading file: %v", err)
+	}
+	
+	// Create backup if requested
+	if createBackup {
+		backupName := filename + ".bak"
+		err := copyFile(filename, backupName)
+		if err != nil {
+			return fmt.Errorf("failed to create backup: %v", err)
+		}
+		fmt.Printf("Backup created: %s\n", backupName)
+	}
+	
+	// Insert content at specified line
+	insertPos := lineNum - 1 // Convert to 0-based index
+	if insertPos > len(lines) {
+		insertPos = len(lines) // Append at end if line number is beyond file
+	}
+	
+	// Split content into lines
+	contentLines := strings.Split(strings.TrimRight(content, "\n"), "\n")
+	
+	// Create new line slice with inserted content
+	newLines := make([]string, 0, len(lines)+len(contentLines))
+	newLines = append(newLines, lines[:insertPos]...)
+	newLines = append(newLines, contentLines...)
+	newLines = append(newLines, lines[insertPos:]...)
+	
+	// Write back to file
+	err = os.WriteFile(filename, []byte(strings.Join(newLines, "\n")+"\n"), 0644)
+	if err != nil {
+		return fmt.Errorf("failed to write file: %v", err)
+	}
+	
+	return nil
+}
+
+func copyFile(src, dst string) error {
+	data, err := os.ReadFile(src)
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(dst, data, 0644)
+}
+
+func generateEnterpriseUI(outputFile string, insertMode bool) string {
 	// Create complex enterprise dashboard UI
 	mainCanvas := canvas.NewByteCanvas()
 	
@@ -251,22 +352,27 @@ func generateEnterpriseUI(outputFile string) {
 	output += fmt.Sprintf("Layout:\n")
 	output += mainCanvas.String()
 	
-	// Determine output filename
-	filename := outputFile
-	if filename == "" {
-		filename = fmt.Sprintf("enterprise_ui_%dx%d.txt", currentWidth, canvas.GetCurrentHeight())
+	// If not in insert mode, write to file
+	if !insertMode {
+		// Determine output filename
+		filename := outputFile
+		if filename == "" {
+			filename = fmt.Sprintf("enterprise_ui_%dx%d.txt", currentWidth, canvas.GetCurrentHeight())
+		}
+		
+		err := os.WriteFile(filename, []byte(output), 0644)
+		if err != nil {
+			fmt.Printf("Error writing file: %v\n", err)
+			return output
+		}
+		
+		fmt.Printf("Enterprise Dashboard UI created: %s\n", filename)
 	}
 	
-	err := os.WriteFile(filename, []byte(output), 0644)
-	if err != nil {
-		fmt.Printf("Error writing file: %v\n", err)
-		return
-	}
-	
-	fmt.Printf("Enterprise Dashboard UI created: %s\n", filename)
+	return output
 }
 
-func generateMobileUI(outputFile string) {
+func generateMobileUI(outputFile string, insertMode bool) string {
 	// Create mobile smartphone UI
 	mobileCanvas := canvas.NewByteCanvas()
 	
@@ -344,22 +450,27 @@ func generateMobileUI(outputFile string) {
 	output += fmt.Sprintf("Layout:\n")
 	output += mobileCanvas.String()
 	
-	// Determine output filename
-	filename := outputFile
-	if filename == "" {
-		filename = fmt.Sprintf("mobile_ui_%dx%d.txt", currentWidth, canvas.GetCurrentHeight())
+	// If not in insert mode, write to file
+	if !insertMode {
+		// Determine output filename
+		filename := outputFile
+		if filename == "" {
+			filename = fmt.Sprintf("mobile_ui_%dx%d.txt", currentWidth, canvas.GetCurrentHeight())
+		}
+		
+		err := os.WriteFile(filename, []byte(output), 0644)
+		if err != nil {
+			fmt.Printf("Error writing file: %v\n", err)
+			return output
+		}
+		
+		fmt.Printf("Mobile UI created: %s\n", filename)
 	}
 	
-	err := os.WriteFile(filename, []byte(output), 0644)
-	if err != nil {
-		fmt.Printf("Error writing file: %v\n", err)
-		return
-	}
-	
-	fmt.Printf("Mobile UI created: %s\n", filename)
+	return output
 }
 
-func generateSimpleUI(outputFile string) {
+func generateSimpleUI(outputFile string, insertMode bool) string {
 	// Create simple box layout UI
 	simpleCanvas := canvas.NewByteCanvas()
 	
@@ -405,17 +516,22 @@ func generateSimpleUI(outputFile string) {
 	output += fmt.Sprintf("Layout:\n")
 	output += simpleCanvas.String()
 	
-	// Determine output filename
-	filename := outputFile
-	if filename == "" {
-		filename = fmt.Sprintf("simple_ui_%dx%d.txt", currentWidth, canvas.GetCurrentHeight())
+	// If not in insert mode, write to file
+	if !insertMode {
+		// Determine output filename
+		filename := outputFile
+		if filename == "" {
+			filename = fmt.Sprintf("simple_ui_%dx%d.txt", currentWidth, canvas.GetCurrentHeight())
+		}
+		
+		err := os.WriteFile(filename, []byte(output), 0644)
+		if err != nil {
+			fmt.Printf("Error writing file: %v\n", err)
+			return output
+		}
+		
+		fmt.Printf("Simple UI created: %s\n", filename)
 	}
 	
-	err := os.WriteFile(filename, []byte(output), 0644)
-	if err != nil {
-		fmt.Printf("Error writing file: %v\n", err)
-		return
-	}
-	
-	fmt.Printf("Simple UI created: %s\n", filename)
+	return output
 }

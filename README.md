@@ -2,7 +2,26 @@
 
 **[🇯🇵 日本語版 README](README.ja.md) | 🇺🇸 English**
 
-A powerful Go-based tool for creating perfectly aligned ASCII art UI specifications that AI can use to generate web interfaces.
+A powerful Go-based command-line tool for creating perfectly aligned ASCII art UI specifications that AI can use to generate web interfaces. Features multiple templates, responsive layouts, and the ability to insert UIs directly into existing documents.
+
+## Quick Start
+
+```bash
+# Generate default enterprise dashboard
+go run main.go
+
+# Create mobile UI with compact width
+go run main.go --template=mobile --width=60
+
+# Generate ultra-wide dashboard and save to custom file
+go run main.go --template=enterprise --width=120 --output=dashboard.txt
+
+# Insert UI into existing document at line 25 with backup
+go run main.go --template=simple --insert=document.txt:25 --backup
+
+# Show help with all options
+go run main.go --help
+```
 
 ## Demo - Live Output Examples
 
@@ -82,8 +101,12 @@ Kit4AI solves the layout misalignment problem that occurs when AI directly creat
 
 ## Key Features
 
+- **Command-Line Interface**: Full CLI with templates, width options, and help system
+- **Multiple Templates**: Enterprise dashboards, mobile interfaces, and simple layouts
+- **Responsive Design**: Automatically adapts to different canvas widths (60, 72, 80, 100, 120 characters)
+- **Document Insertion**: Insert UIs directly into existing files at specified line numbers
+- **Backup Support**: Automatic backup creation when modifying existing files
 - **Perfect Alignment**: ByteCanvas system ensures no layout drift
-- **Multi-Width Support**: Configurable canvas widths (60, 72, 80, 100, 120 characters)
 - **ASCII Filter**: Automatically removes full-width characters to prevent misalignment
 - **Layer System**: Z-ordered layers for complex UI composition
 - **Markdown Ready**: Output designed for embedding in documentation
@@ -176,7 +199,51 @@ kit4ai/
 
 ## Usage
 
-### Basic Example
+### Command Line Interface
+
+Kit4AI is primarily used as a command-line tool with various options:
+
+```bash
+# Basic usage - generate default enterprise UI
+go run main.go
+
+# Template selection
+go run main.go --template=mobile     # Mobile smartphone interface
+go run main.go --template=enterprise # Complex dashboard (default)
+go run main.go --template=simple     # Basic two-panel layout
+
+# Width configuration
+go run main.go --width=60   # Compact (mobile/narrow)
+go run main.go --width=72   # Print-friendly (A4)
+go run main.go --width=80   # Standard (legacy compatible)
+go run main.go --width=100  # Wide (modern displays)
+go run main.go --width=120  # Ultra-wide (large monitors)
+
+# Custom output file
+go run main.go --output=my_dashboard.txt
+
+# Document insertion
+go run main.go --template=mobile --insert=document.txt:10 --backup
+```
+
+### Document Insertion Feature
+
+Insert UIs directly into existing files at specified line numbers:
+
+```bash
+# Insert mobile UI at line 25 with backup
+go run main.go --template=mobile --width=60 --insert=readme.txt:25 --backup
+
+# Insert enterprise dashboard at end of document
+go run main.go --template=enterprise --insert=design_doc.txt:999
+
+# Insert simple layout without backup
+go run main.go --template=simple --width=100 --insert=specification.md:15
+```
+
+### Programmatic Usage
+
+For advanced use cases, you can also use Kit4AI as a Go library:
 
 ```go
 package main
@@ -204,27 +271,36 @@ func main() {
 }
 ```
 
-### Complex UI Example
+## Command-Line Options
 
-```go
-// Create enterprise dashboard
-canvas.SetConfig(canvas.StandardConfig)
-dashboard := canvas.NewByteCanvas()
+### Basic Options
 
-// Title bar
-dashboard.DrawBox(0, 0, 79, 2)
-dashboard.WriteBytesASCII(2, 1, "ENTERPRISE DASHBOARD v2.1")
+- `--template` - UI template to generate (enterprise, mobile, simple)
+- `--width` - Canvas width (60, 72, 80, 100, 120)
+- `--output` - Output file name (default: auto-generated)
+- `--help` - Show help information
+- `--version` - Show version information
 
-// Multi-panel layout
-dashboard.DrawBox(0, 3, 25, 15)  // Sidebar
-dashboard.DrawBox(26, 3, 79, 15) // Main content
+### Document Insertion
 
-// Add content with automatic ASCII filtering
-dashboard.WriteBytesASCII(2, 5, "Navigation Menu")
-dashboard.WriteBytesASCII(28, 5, "Analytics Data")
-```
+- `--insert file:line` - Insert UI into existing file at specified line
+- `--backup` - Create backup (.bak) before inserting
 
-## API Reference
+### Templates
+
+- **enterprise** - Complex dashboard UI with navigation, metrics, charts
+- **mobile** - Smartphone interface with messaging layout
+- **simple** - Basic two-panel layout
+
+### Width Options
+
+- **60** - Compact (mobile/narrow displays)
+- **72** - Print-friendly (A4 paper compatible)
+- **80** - Standard (legacy terminal compatible)
+- **100** - Wide (modern displays)
+- **120** - Ultra-wide (large monitors)
+
+## API Reference (Library Usage)
 
 ### ByteCanvas Methods
 

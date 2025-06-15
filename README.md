@@ -1,5 +1,7 @@
 # Kit4AI - ASCII Art UI Specification Tool
 
+**[🇯🇵 日本語版 README](README.ja.md) | 🇺🇸 English**
+
 A powerful Go-based tool for creating perfectly aligned ASCII art UI specifications that AI can use to generate web interfaces.
 
 ## Demo - Live Output Examples
@@ -61,6 +63,18 @@ Input: `"Hello 世界 World! メッセージ Test"`
 Output: `"Hello  World!  Test"`
 
 ✅ **Perfect alignment guaranteed** - All full-width characters automatically removed
+
+## Table of Contents
+
+- [Demo - Live Output Examples](#demo---live-output-examples)
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Reference](#api-reference)
+- [Examples](#examples)
+- [Best Practices](#best-practices)
+- [Contributing](#contributing)
+- [Language / 言語](#language--言語)
 
 ## Overview
 
@@ -350,5 +364,8 @@ MIT License - see LICENSE file for details
 - **Legacy Systems**: Terminal-based interface design
 
 ---
+
+**Language / 言語:**  
+🇺🇸 **English** | [🇯🇵 日本語版 README](README.ja.md)
 
 *Kit4AI enables AI systems to create perfectly aligned ASCII art UI specifications for web development projects.*

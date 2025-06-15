@@ -2,6 +2,66 @@
 
 A powerful Go-based tool for creating perfectly aligned ASCII art UI specifications that AI can use to generate web interfaces.
 
+## Demo - Live Output Examples
+
+### Enterprise Dashboard UI
+
+```
++------------------------------------------------------------------------------+
+| ENTERPRISE CONTROL PANEL v2.4.1                           2024-06-15 14:32:17|
++------------------------------------------------------------------------------+
+| [F1]File [F2]Edit [F3]View [F4]Tools [F5]Reports [F6]Admin [ESC]Exit         |
++------------------------------------------------------------------------------+
++------------------++----------------------------------------------------------+
+|NAVIGATION        ||+----------------+ +-----------------+ +-----------------+|
+| [1] Dashboard    |||REVENUE METRICS | |PERFORMANCE      | |SECURITY         ||
+|>[2] Analytics    |||Daily: $47,892  | |Avg Resp: 245ms  | |Threats: 0       ||
+| [3] Users        |||Weekly: $312,456| |Uptime: 99.97%   | |Blocked: 127     ||
+| [4] Settings     |||Monthly: $1.2M  | |Errors: 0.03%    | |Firewall: ON     ||
+|                  |||Growth: +12.5%  | |Requests: 847K   | |SSL: Valid       ||
+|QUICK ACTIONS     |||Target: 87%     | |Cache Hit: 94%   | |Backup: OK       ||
+| [R] Refresh      ||+----------------+ +-----------------+ +-----------------+|
+| [B] Backup       ||+------------------------------------+ +-----------------+|
+| [M] Maintenance  |||ANALYTICS CHART - Last 7 Days       | |LIVE ACTIVITY    ||
+|                  |||Revenue |#######*****:::::....      | |14:32 Login: admin|
+|SYSTEM STATUS     |||Traffic |****#######****::....      | |14:31 Order #4891||
+| CPU: 67%         |||Users   |:::*****########**..       | |14:30 User signup||
+| RAM: 4.2/8GB     |||Errors  |.....::::*****......       | |14:29 Payment OK ||
+| Online: 1,247    ||+        Mon Tue Wed Thu Fri Sat Sun-+ |14:28 Backup done||
++------------------++----------------------------------------------------------+
+| Connected: DB-MAIN | Cache: REDIS-01 | Queue: 247 | Alerts: 0  F10:Settings  |
++------------------------------------------------------------------------------+
+```
+
+### Smartphone UI
+
+```
++----------------------------------------------------------+
+| 12:34 PM               5G                     [====] 87% |
++----------------------------------------------------------+
+| <-                   MESSAGES                       [+]  |
++----------------------------------------------------------+
+| [1] New Message               Active: 3                  |
+| [2] Contacts                  Total: 127                 |
+| [3] Recent Chats              Unread: 5                  |
+| [4] Settings                  Status: Online             |
++----------------------------------------------------------+
+| John Doe                               2:30 PM           |
+| Hey, are you free for lunch?                             |
+| Jane Smith                             1:45 PM           |
+| Meeting at 3 PM confirmed                                |
++----------------------------------------------------------+
+|    [HOME]     [CHAT]     [CALL]     [MORE]     [USER]    |
++----------------------------------------------------------+
+```
+
+### ASCII Filter Demo
+
+Input: `"Hello 世界 World! メッセージ Test"`  
+Output: `"Hello  World!  Test"`
+
+✅ **Perfect alignment guaranteed** - All full-width characters automatically removed
+
 ## Overview
 
 Kit4AI solves the layout misalignment problem that occurs when AI directly creates ASCII art. By providing a structured canvas system with automatic character filtering, developers can create consistent, professional UI specifications that render perfectly in Markdown documents.

@@ -27,3 +27,11 @@ go.work
 # Temporary files
 *.tmp
 *.temp
+
+# Generated UI files
+*_ui_*.txt
+enterprise_ui_*.txt
+mobile_ui_*.txt
+simple_ui_*.txt
+dashboard.txt
+complex_enterprise_ui.txt

@@ -8,12 +8,12 @@ import (
 type ArrowStyle string
 
 const (
-	ArrowStyleNormal  ArrowStyle = "---->"  // Normal arrow
-	ArrowStyleThick   ArrowStyle = "====>"  // Thick arrow
-	ArrowStyleWave    ArrowStyle = "~~~>"   // Wave arrow
-	ArrowStyleShort   ArrowStyle = "--->"   // Short arrow
-	ArrowStyleDouble  ArrowStyle = "--->>>" // Double arrow
-	ArrowStyleDotted  ArrowStyle = "...>"   // Dotted arrow
+	ArrowStyleNormal   ArrowStyle = "---->"   // Normal arrow
+	ArrowStyleThick    ArrowStyle = "====>"   // Thick arrow
+	ArrowStyleWave     ArrowStyle = "~~~>"    // Wave arrow
+	ArrowStyleShort    ArrowStyle = "--->"    // Short arrow
+	ArrowStyleDouble   ArrowStyle = "--->>>"  // Double arrow
+	ArrowStyleDotted   ArrowStyle = "...>"    // Dotted arrow
 )
 
 // Arrow represents a single arrow with start/end points and style
@@ -92,7 +92,7 @@ func (al *ArrowLayer) drawArrow(canvas *ByteCanvas, arrow Arrow) error {
 		// Vertical arrow
 		return al.drawVerticalArrow(canvas, arrow)
 	} else {
-		// Diagonal arrow (simplified - draw L-shaped path)
+		// Diagonal arrow (L-shaped path)
 		return al.drawLShapedArrow(canvas, arrow)
 	}
 }

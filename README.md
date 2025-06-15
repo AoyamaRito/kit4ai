@@ -1,29 +1,49 @@
-# Kit4AI - ASCII Art UI Specification Tool
+# Kit4AI - AI-Driven ASCII UI Specification Generator
+
+**🤖 Claude Code Exclusive Tool | AI-to-AI Communication | Not for Direct Human Use**
 
 **[🇯🇵 日本語版 README](README.ja.md) | 🇺🇸 English**
 
-A powerful Go-based command-line tool for creating perfectly aligned ASCII art UI specifications that AI can use to generate web interfaces. Features multiple templates, responsive layouts, and the ability to insert UIs directly into existing documents.
+A specialized Go-based tool that enables **Claude Code** to automatically generate perfectly aligned ASCII art UI specifications. This tool is designed for AI agents to create structured design documents that human developers can review and implement.
 
-## Quick Start
+## ⚠️ Important: About This Tool
+
+- **🤖 AI-Exclusive**: Designed specifically for Claude Code AI agent usage
+- **📋 Specification Generator**: Creates design documents, not actual UIs
+- **🚫 Not for Humans**: Not intended for direct human operation
+- **🔄 AI-to-Human Workflow**: Claude Code → Kit4AI → Design Spec → Human Developer
+
+## What Kit4AI Does
+
+Kit4AI allows Claude Code to:
+1. **Generate UI Specifications**: Create detailed ASCII mockups for web interfaces
+2. **Propose Design Solutions**: Provide visual representations of UI concepts
+3. **Document Layouts**: Generate structured specifications for development teams
+4. **Communicate Visually**: Bridge the gap between AI suggestions and human implementation
+
+## How Claude Code Uses Kit4AI
+
+**Note: These examples show how Claude Code internally uses this tool**
 
 ```bash
-# Generate default enterprise dashboard
-go run main.go
+# Claude Code generates enterprise dashboard specification
+go run main.go --template=enterprise --width=80
 
-# Create mobile UI with compact width
+# Claude Code creates mobile UI specification  
 go run main.go --template=mobile --width=60
 
-# Generate ultra-wide dashboard and save to custom file
-go run main.go --template=enterprise --width=120 --output=dashboard.txt
+# Claude Code inserts UI spec into design document
+go run main.go --template=simple --insert=design_doc.md:25 --backup
 
-# Insert UI into existing document at line 25 with backup
-go run main.go --template=simple --insert=document.txt:25 --backup
-
-# Show help with all options
+# Claude Code checks available options
 go run main.go --help
 ```
 
-## Demo - Live Output Examples
+**Human developers**: You will receive the generated specifications from Claude Code, not use this tool directly.
+
+## Claude Code Generated Specifications
+
+**Examples of what Claude Code produces for human developers:**
 
 ### Enterprise Dashboard UI
 
@@ -431,17 +451,27 @@ Preserves:
 
 MIT License - see LICENSE file for details
 
-## Use Cases
+## AI-to-Human Workflow
 
-- **AI UI Generation**: Provide structured templates for AI systems
-- **Documentation**: Embed UI mockups in technical docs
-- **Prototyping**: Rapid ASCII-based interface design
-- **Cross-platform**: Universal text-based UI specifications
-- **Legacy Systems**: Terminal-based interface design
+**How Claude Code uses Kit4AI to help development teams:**
+
+1. **🤖 AI Analysis**: Claude Code analyzes project requirements
+2. **📋 Specification Generation**: Uses Kit4AI to create visual mockups
+3. **👥 Human Review**: Developers receive structured design documents
+4. **🔧 Implementation**: Teams build actual UIs based on specifications
+5. **🔄 Iteration**: Claude Code can generate variations and refinements
+
+## Use Cases for Development Teams
+
+- **📋 Design Documentation**: Visual specifications in project docs
+- **🎯 Requirement Clarification**: Clear visual communication of UI concepts  
+- **🚀 Rapid Prototyping**: Quick visual exploration of interface ideas
+- **📱 Cross-Platform Planning**: Universal text-based specifications
+- **🔄 AI-Assisted Design**: Leverage AI for UI design suggestions
 
 ---
 
 **Language / 言語:**  
 🇺🇸 **English** | [🇯🇵 日本語版 README](README.ja.md)
 
-*Kit4AI enables AI systems to create perfectly aligned ASCII art UI specifications for web development projects.*
+*Kit4AI enables Claude Code to generate perfectly aligned ASCII UI specifications, bridging AI analysis with human development workflows.*

@@ -41,6 +41,9 @@ go run main.go --help
 # NEW: Claude Code generates UI from YAML specification
 go run main.go --yaml ui_spec.yaml
 
+# NEW: Claude Code uses YAML with Japanese support
+go run main.go --yaml ui_spec.yaml --jp
+
 # NEW: Claude Code uses YAML from stdin
 cat dashboard.yaml | go run main.go --yaml -
 ```
@@ -130,6 +133,7 @@ Kit4AI solves the layout misalignment problem that occurs when AI directly creat
 - **Command-Line Interface**: Full CLI with templates, width options, and help system
 - **Multiple Templates**: Enterprise dashboards, mobile interfaces, and simple layouts
 - **YAML Input Support**: Generate UI from declarative YAML specifications (NEW!)
+- **Japanese Text Support**: Full Unicode support with --jp option for Japanese content (NEW!)
 - **Responsive Design**: Automatically adapts to different canvas widths (60, 72, 80, 100, 120 characters)
 - **Document Insertion**: Insert UIs directly into existing files at specified line numbers
 - **Backup Support**: Automatic backup creation when modifying existing files
@@ -263,6 +267,12 @@ go run main.go --template=mobile --insert=document.txt:10 --backup
 # YAML-based UI generation (NEW!)
 go run main.go --yaml examples/simple_dashboard.yaml
 go run main.go --yaml examples/mobile_ui.yaml --output=mobile.txt
+
+# Japanese text support (NEW!)
+go run main.go --yaml examples/japanese_hospital_system.yaml --jp
+go run main.go --yaml ui_spec.yaml --jp --output=japanese_ui.txt
+
+# YAML from stdin
 cat ui_spec.yaml | go run main.go --yaml -
 ```
 
@@ -292,6 +302,44 @@ elements:
       rows:
         - ["API", "Running"]
         - ["Database", "Running"]
+```
+
+### Japanese Text Support (NEW!)
+
+Enable Japanese text rendering with the `--jp` option:
+
+```yaml
+# Example: japanese_dashboard.yaml
+canvas:
+  width: 80
+  height: 30
+  japanese_mode: true  # Optional: can be overridden by --jp
+
+elements:
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 40, height: 10}
+      title: "システム状況"
+  
+  - text:
+      position: {x: 2, y: 2}
+      content: "サーバー稼働中"
+  
+  - table:
+      position: {x: 0, y: 12}
+      headers: ["サービス", "状態"]
+      rows:
+        - ["API", "稼働中"]
+        - ["データベース", "正常"]
+```
+
+**Usage:**
+```bash
+# Force Japanese mode with --jp flag
+go run main.go --yaml dashboard.yaml --jp
+
+# Japanese mode defined in YAML (japanese_mode: true)
+go run main.go --yaml japanese_dashboard.yaml
 ```
 
 ### Document Insertion Feature
@@ -350,6 +398,7 @@ func main() {
 - `--width` - Canvas width (60, 72, 80, 100, 120)
 - `--output` - Output file name (default: auto-generated)
 - `--yaml` - YAML file to parse (use '-' for stdin) (NEW!)
+- `--jp` - Enable Japanese mode for YAML processing (NEW!)
 - `--help` - Show help information
 - `--version` - Show version information
 

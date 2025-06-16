@@ -1,0 +1,226 @@
+canvas:
+  width: 100
+  height: 45
+  japanese_mode: true
+
+elements:
+  # メインタイトル
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 100, height: 4}
+      title: "サイバーカフェ管理システム Ver.2.1"
+  
+  - text:
+      position: {x: 5, y: 2}
+      content: "店舗: 渋谷店 | 営業状況: 営業中 | 現在時刻: 2024年6月16日 21:45"
+  
+  - text:
+      position: {x: 70, y: 2}
+      content: "売上目標達成率: 87%"
+
+  # 座席状況
+  - box:
+      position: {x: 0, y: 5}
+      size: {width: 50, height: 18}
+      title: "座席状況・予約管理"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "総座席数: 48席 | 利用中: 31席 | 空席: 17席"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "【ゲーミングエリア】(高性能PC・RTX4080搭載)"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "座席01: [利用中] 田中太郎 - VALORANT | 残り2時間15分"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "座席02: [利用中] 佐藤花子 - Apex Legends | 残り45分"
+  
+  - text:
+      position: {x: 2, y: 12}
+      content: "座席03: [空席] 次回予約: 22:30-24:30 (山田一郎)"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "【一般エリア】(標準PC・GTX1660搭載)"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "座席15: [利用中] 鈴木次郎 - ブラウジング | 残り30分"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "座席16: [利用中] 高橋美咲 - 動画編集 | 残り1時間45分"
+  
+  - text:
+      position: {x: 2, y: 18}
+      content: "【個室エリア】(プライベート空間・防音)"
+  
+  - text:
+      position: {x: 2, y: 19}
+      content: "個室A: [利用中] 配信者モード | 残り3時間20分"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "個室B: [空席] VIP待機中"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "個室C: [清掃中] 利用可能時刻: 22:15"
+
+  # 売上・統計
+  - box:
+      position: {x: 52, y: 5}
+      size: {width: 48, height: 18}
+      title: "売上統計・人気コンテンツ"
+  
+  - text:
+      position: {x: 54, y: 7}
+      content: "本日売上: ¥127,450 (目標: ¥145,000)"
+  
+  - text:
+      position: {x: 54, y: 8}
+      content: "時間料金: ¥89,200 | ドリンク: ¥23,150 | フード: ¥15,100"
+  
+  - text:
+      position: {x: 54, y: 10}
+      content: "【人気ゲームランキング】"
+  
+  - text:
+      position: {x: 54, y: 11}
+      content: "1位: VALORANT (15人プレイ中)"
+  
+  - text:
+      position: {x: 54, y: 12}
+      content: "2位: Apex Legends (8人プレイ中)"
+  
+  - text:
+      position: {x: 54, y: 13}
+      content: "3位: League of Legends (6人プレイ中)"
+  
+  - text:
+      position: {x: 54, y: 14}
+      content: "4位: Fortnite (4人プレイ中)"
+  
+  - text:
+      position: {x: 54, y: 15}
+      content: "5位: 原神 (3人プレイ中)"
+  
+  - text:
+      position: {x: 54, y: 17}
+      content: "【ピークタイム予測】"
+  
+  - text:
+      position: {x: 54, y: 18}
+      content: "22:00-24:00: 満席予想 (予約率98%)"
+  
+  - text:
+      position: {x: 54, y: 19}
+      content: "00:00-02:00: 高稼働 (予約率75%)"
+  
+  - text:
+      position: {x: 54, y: 20}
+      content: "02:00-06:00: 夜勤・深夜組 (予約率45%)"
+  
+  - text:
+      position: {x: 54, y: 21}
+      content: "推奨アクション: ドリンク半額キャンペーン"
+
+  # フード・ドリンク注文状況
+  - box:
+      position: {x: 0, y: 24}
+      size: {width: 50, height: 12}
+      title: "フード・ドリンク注文状況"
+  
+  - text:
+      position: {x: 2, y: 26}
+      content: "【調理待ち】"
+  
+  - text:
+      position: {x: 2, y: 27}
+      content: "座席05: からあげ定食 (調理開始: 21:42)"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "座席12: カレーライス + コーラ (調理中: 8分経過)"
+  
+  - text:
+      position: {x: 2, y: 29}
+      content: "個室A: エナジードリンク x3 (配達準備中)"
+  
+  - text:
+      position: {x: 2, y: 31}
+      content: "【人気メニュー本日売上】"
+  
+  - text:
+      position: {x: 2, y: 32}
+      content: "1位: ハンバーガーセット (12食 - ¥8,400)"
+  
+  - text:
+      position: {x: 2, y: 33}
+      content: "2位: エナジードリンク (28本 - ¥8,120)"
+  
+  - text:
+      position: {x: 2, y: 34}
+      content: "3位: ポテトフライ (15皿 - ¥4,500)"
+
+  # システム・アラート
+  - box:
+      position: {x: 52, y: 24}
+      size: {width: 48, height: 12}
+      title: "システム状況・アラート"
+  
+  - text:
+      position: {x: 54, y: 26}
+      content: "[正常] 全PC稼働中 (48/48台)"
+  
+  - text:
+      position: {x: 54, y: 27}
+      content: "[正常] ネットワーク: 1Gbps | 平均ping: 12ms"
+  
+  - text:
+      position: {x: 54, y: 28}
+      content: "[注意] 座席23: CPU温度やや高 (78°C)"
+  
+  - text:
+      position: {x: 54, y: 29}
+      content: "[警告] プリンター: トナー残量少 (15%)"
+  
+  - text:
+      position: {x: 54, y: 31}
+      content: "【メンテナンス予定】"
+  
+  - text:
+      position: {x: 54, y: 32}
+      content: "・清掃: 毎日 06:00-08:00"
+  
+  - text:
+      position: {x: 54, y: 33}
+      content: "・PC更新: 毎週日曜 05:00-07:00"
+  
+  - text:
+      position: {x: 54, y: 34}
+      content: "・システム再起動: 本日 03:00実行予定"
+
+  # スタッフ状況
+  - table:
+      position: {x: 0, y: 37}
+      headers: ["スタッフ名", "シフト", "担当エリア", "状況"]
+      rows:
+        - ["田村主任", "18:00-02:00", "全体統括", "レジ対応中"]
+        - ["山本さん", "20:00-04:00", "フロア", "座席案内中"]
+        - ["佐々木さん", "21:00-03:00", "キッチン", "調理中"]
+        - ["新人・鈴木", "21:00-01:00", "清掃・補助", "研修中"]
+
+  # フッター
+  - line:
+      start: {x: 0, y: 42}
+      end: {x: 99, y: 42}
+  
+  - text:
+      position: {x: 2, y: 43}
+      content: "緊急連絡: 本部 03-1234-5678 | 警備 090-9876-5432 | 次回レポート: 22:00"

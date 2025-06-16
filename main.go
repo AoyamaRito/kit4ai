@@ -22,6 +22,7 @@ func main() {
 		help     = flag.Bool("help", false, "Show help information")
 		version  = flag.Bool("version", false, "Show version information")
 		yamlFile = flag.String("yaml", "", "YAML file to parse (use '-' for stdin)")
+		jp       = flag.Bool("jp", false, "Enable Japanese mode for YAML processing")
 	)
 	
 	flag.Usage = func() {
@@ -42,10 +43,14 @@ func main() {
 		fmt.Fprintf(os.Stderr, "\nInsertion:\n")
 		fmt.Fprintf(os.Stderr, "  --insert file:line   Insert UI into existing file at specified line number\n")
 		fmt.Fprintf(os.Stderr, "  --backup             Create backup (.bak) before inserting\n")
+		fmt.Fprintf(os.Stderr, "\nJapanese Support:\n")
+		fmt.Fprintf(os.Stderr, "  --jp                 Enable Japanese mode for YAML processing\n")
+		fmt.Fprintf(os.Stderr, "                       (Use with --yaml for Japanese text support)\n")
 		fmt.Fprintf(os.Stderr, "\nExamples:\n")
 		fmt.Fprintf(os.Stderr, "  %s --template=mobile --width=60\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "  %s --template=enterprise --width=100 --output=dashboard.txt\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "  %s --template=simple --insert=document.txt:10 --backup\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "  %s --yaml=file.yaml --jp --output=japanese_ui.txt\n", os.Args[0])
 	}
 	
 	flag.Parse()
@@ -62,7 +67,7 @@ func main() {
 	
 	// Check if YAML mode
 	if *yamlFile != "" {
-		if err := processYAML(*yamlFile, *output, *insert, *backup); err != nil {
+		if err := processYAML(*yamlFile, *output, *insert, *backup, *jp); err != nil {
 			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
 			os.Exit(1)
 		}
@@ -548,7 +553,7 @@ func generateSimpleUI(outputFile string, insertMode bool) string {
 }
 
 // processYAML handles YAML input processing
-func processYAML(yamlFile, outputFile, insertSpec string, backup bool) error {
+func processYAML(yamlFile, outputFile, insertSpec string, backup bool, japaneseMode bool) error {
 	var reader *os.File
 	var err error
 	
@@ -568,6 +573,11 @@ func processYAML(yamlFile, outputFile, insertSpec string, backup bool) error {
 	spec, err := parser.Parse(reader)
 	if err != nil {
 		return fmt.Errorf("failed to parse YAML: %w", err)
+	}
+	
+	// Override Japanese mode if --jp flag is set
+	if japaneseMode {
+		spec.Canvas.JapaneseMode = true
 	}
 	
 	// Render to ASCII art

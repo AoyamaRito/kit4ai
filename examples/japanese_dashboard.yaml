@@ -1,0 +1,106 @@
+canvas:
+  width: 80
+  height: 30
+  japanese_mode: true
+
+elements:
+  # メインタイトル
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 80, height: 3}
+      title: "システム監視ダッシュボード"
+  
+  - text:
+      position: {x: 5, y: 1}
+      content: "サーバー: PROD-01 | 状態: 稼働中 | 最終更新: 2024年6月16日 15:32"
+
+  # システム状況
+  - box:
+      position: {x: 0, y: 4}
+      size: {width: 39, height: 12}
+      title: "システム状況"
+  
+  - text:
+      position: {x: 2, y: 6}
+      content: "CPU使用率: 45%"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "メモリ: 8.2GB / 16GB"
+  
+  - text:
+      position: {x: 2, y: 8}
+      content: "ディスク: 120GB / 500GB"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "ネットワーク: 1.2 Mbps"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "稼働時間: 15日"
+  
+  - text:
+      position: {x: 2, y: 13}
+      content: "温度: CPU 42°C / GPU 38°C"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "ファン速度: 1,200 RPM"
+
+  # アラート
+  - box:
+      position: {x: 41, y: 4}
+      size: {width: 39, height: 12}
+      title: "アラート・通知"
+  
+  - text:
+      position: {x: 43, y: 6}
+      content: "[警告] セキュリティ更新が2件"
+  
+  - text:
+      position: {x: 43, y: 7}
+      content: "[情報] 自動バックアップ完了"
+  
+  - text:
+      position: {x: 43, y: 8}
+      content: "[正常] 全サービス稼働中"
+  
+  - text:
+      position: {x: 43, y: 10}
+      content: "次回メンテナンス:"
+  
+  - text:
+      position: {x: 43, y: 11}
+      content: "2024年6月20日 02:00"
+  
+  - text:
+      position: {x: 43, y: 13}
+      content: "監視間隔: 30秒"
+  
+  - text:
+      position: {x: 43, y: 14}
+      content: "データ保持: 30日間"
+
+  # サービス一覧
+  - table:
+      position: {x: 0, y: 17}
+      headers: ["サービス名", "状態", "ポート", "メモリ使用量"]
+      rows:
+        - ["Webサーバー", "稼働中", "80", "512MB"]
+        - ["データベース", "稼働中", "5432", "2GB"]
+        - ["キャッシュ", "稼働中", "6379", "256MB"]
+        - ["メール", "停止中", "25", "0MB"]
+
+  # フッター
+  - line:
+      start: {x: 0, y: 25}
+      end: {x: 79, y: 25}
+  
+  - text:
+      position: {x: 2, y: 27}
+      content: "接続先: 東京データセンター | 地域: アジア太平洋 | 遅延: 12ms"
+  
+  - text:
+      position: {x: 55, y: 27}
+      content: "[F1] ヘルプ | [Q] 終了"

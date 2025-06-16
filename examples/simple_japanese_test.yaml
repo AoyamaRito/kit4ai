@@ -1,0 +1,37 @@
+canvas:
+  width: 60
+  height: 20
+  japanese_mode: true
+
+elements:
+  # シンプルなテスト
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 60, height: 4}
+      title: "日本語テスト"
+  
+  - text:
+      position: {x: 5, y: 2}
+      content: "こんにちは世界！Hello World 123"
+  
+  # シンプルなテーブル
+  - table:
+      position: {x: 0, y: 6}
+      headers: ["名前", "年齢", "職業"]
+      rows:
+        - ["田中太郎", "25歳", "エンジニア"]
+        - ["佐藤花子", "30歳", "デザイナー"]
+  
+  # シンプルなボックス
+  - box:
+      position: {x: 0, y: 12}
+      size: {width: 30, height: 6}
+      title: "メモ"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "重要な会議: 明日15時"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "場所: 会議室A"

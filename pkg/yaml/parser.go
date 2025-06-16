@@ -49,7 +49,16 @@ func (p *Parser) validate() error {
 
 // Render converts the UISpec to ASCII art
 func (p *Parser) Render(spec *UISpec) (string, error) {
-	// Create a byte canvas with specified dimensions
+	// Use UTF-8 renderer if Japanese mode is enabled
+	if spec.Canvas.JapaneseMode {
+		ur := NewUTF8Renderer(spec.Canvas.Width, spec.Canvas.Height)
+		if err := ur.RenderElements(spec.Elements); err != nil {
+			return "", fmt.Errorf("failed to render UTF-8 elements: %w", err)
+		}
+		return ur.String(), nil
+	}
+	
+	// Use regular byte canvas for ASCII-only mode
 	c := canvas.NewByteCanvasWithSize(spec.Canvas.Width, spec.Canvas.Height)
 	
 	// Process each element

@@ -6,11 +6,13 @@ type UISpec struct {
 	Elements []Element    `yaml:"elements"`
 }
 
-// CanvasSpec defines the canvas dimensions
+// CanvasSpec defines the canvas dimensions and language settings
 type CanvasSpec struct {
-	Width  int `yaml:"width"`
-	Height int `yaml:"height"`
+	Width        int  `yaml:"width"`
+	Height       int  `yaml:"height"`
+	JapaneseMode bool `yaml:"japanese_mode,omitempty"` // Enable Japanese text support
 }
+
 
 // Element represents a UI element with its type and properties
 type Element struct {

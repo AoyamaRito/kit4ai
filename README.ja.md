@@ -41,6 +41,9 @@ go run main.go --help
 # 新機能: Claude CodeがYAML仕様からUIを生成
 go run main.go --yaml ui_spec.yaml
 
+# 新機能: Claude Codeが日本語対応でYAMLを使用
+go run main.go --yaml ui_spec.yaml --jp
+
 # 新機能: Claude Codeが標準入力からYAMLを使用
 cat dashboard.yaml | go run main.go --yaml -
 ```
@@ -123,6 +126,7 @@ Kit4AIは、AIが直接ASCIIアートを作成する際に発生するレイア�
 - **コマンドラインインターフェース**: テンプレート、幅オプション、ヘルプシステムを備えた完全なCLI
 - **複数テンプレート**: エンタープライズダッシュボード、モバイルインターフェース、シンプルレイアウト
 - **YAML入力サポート**: 宣言的YAML仕様からUIを生成（新機能！）
+- **日本語テキスト対応**: --jpオプションによる日本語コンテンツの完全Unicode対応（新機能！）
 - **レスポンシブ設計**: 異なるキャンバス幅（60, 72, 80, 100, 120文字）に自動適応
 - **ドキュメント挿入**: 既存ファイルの指定行に直接UI挿入
 - **バックアップサポート**: 既存ファイル変更時の自動バックアップ作成
@@ -239,6 +243,12 @@ go run main.go --template=mobile --insert=document.txt:10 --backup
 # YAMLベースUI生成（新機能！）
 go run main.go --yaml examples/simple_dashboard.yaml
 go run main.go --yaml examples/mobile_ui.yaml --output=mobile.txt
+
+# 日本語テキスト対応（新機能！）
+go run main.go --yaml examples/japanese_hospital_system.yaml --jp
+go run main.go --yaml ui_spec.yaml --jp --output=japanese_ui.txt
+
+# YAML標準入力
 cat ui_spec.yaml | go run main.go --yaml -
 ```
 
@@ -268,6 +278,44 @@ elements:
       rows:
         - ["API", "実行中"]
         - ["データベース", "実行中"]
+```
+
+### 日本語テキスト対応（新機能！）
+
+`--jp`オプションで日本語テキストレンダリングを有効化：
+
+```yaml
+# 例: japanese_dashboard.yaml
+canvas:
+  width: 80
+  height: 30
+  japanese_mode: true  # オプション: --jpで上書き可能
+
+elements:
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 40, height: 10}
+      title: "システム状況"
+  
+  - text:
+      position: {x: 2, y: 2}
+      content: "サーバー稼働中"
+  
+  - table:
+      position: {x: 0, y: 12}
+      headers: ["サービス", "状態"]
+      rows:
+        - ["API", "稼働中"]
+        - ["データベース", "正常"]
+```
+
+**使用方法:**
+```bash
+# --jpフラグで日本語モードを強制
+go run main.go --yaml dashboard.yaml --jp
+
+# YAML内で定義された日本語モード (japanese_mode: true)
+go run main.go --yaml japanese_dashboard.yaml
 ```
 
 ### ドキュメント挿入機能

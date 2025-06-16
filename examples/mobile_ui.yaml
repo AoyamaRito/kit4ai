@@ -1,0 +1,101 @@
+canvas:
+  width: 40
+  height: 60
+
+elements:
+  # Status bar
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 40, height: 3}
+  
+  - text:
+      position: {x: 1, y: 1}
+      content: "9:41 AM"
+  
+  - text:
+      position: {x: 30, y: 1}
+      content: "100% [=]"
+  
+  # App header
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 40, height: 5}
+      title: "Messages"
+  
+  - text:
+      position: {x: 2, y: 5}
+      content: "< Back"
+  
+  - text:
+      position: {x: 30, y: 5}
+      content: "Edit"
+  
+  # Message list
+  - line:
+      start: {x: 0, y: 8}
+      end: {x: 39, y: 8}
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "John Doe"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "Hey, are you free today?"
+  
+  - text:
+      position: {x: 30, y: 10}
+      content: "2:30 PM"
+  
+  - line:
+      start: {x: 0, y: 13}
+      end: {x: 39, y: 13}
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "Jane Smith"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "Meeting at 3pm confirmed"
+  
+  - text:
+      position: {x: 30, y: 15}
+      content: "1:15 PM"
+  
+  - line:
+      start: {x: 0, y: 18}
+      end: {x: 39, y: 18}
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "Team Chat"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "Mike: Thanks everyone!"
+  
+  - text:
+      position: {x: 30, y: 20}
+      content: "12:00 PM"
+  
+  # Bottom navigation
+  - box:
+      position: {x: 0, y: 55}
+      size: {width: 40, height: 5}
+  
+  - text:
+      position: {x: 3, y: 57}
+      content: "Chats"
+  
+  - text:
+      position: {x: 11, y: 57}
+      content: "Calls"
+  
+  - text:
+      position: {x: 19, y: 57}
+      content: "People"
+  
+  - text:
+      position: {x: 28, y: 57}
+      content: "Settings"

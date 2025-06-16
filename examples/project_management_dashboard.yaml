@@ -1,0 +1,255 @@
+canvas:
+  width: 120
+  height: 50
+
+elements:
+  # Header with project info
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 4}
+      title: "Project Management Dashboard - DevOps Portal v3.2"
+  
+  - text:
+      position: {x: 5, y: 2}
+      content: "Project: E-Commerce Platform Rebuild | Sprint 15 | Team: Alpha"
+  
+  - text:
+      position: {x: 90, y: 2}
+      content: "2024-06-16 | Week 24"
+
+  # Navigation bar
+  - line:
+      start: {x: 0, y: 4}
+      end: {x: 119, y: 4}
+  
+  - text:
+      position: {x: 2, y: 5}
+      content: "[CTRL+1] Overview [CTRL+2] Sprint [CTRL+3] Backlog [CTRL+4] Reports [CTRL+5] Team [ESC] Exit"
+  
+  - line:
+      start: {x: 0, y: 6}
+      end: {x: 119, y: 6}
+
+  # Left panel - Sprint Progress
+  - box:
+      position: {x: 0, y: 7}
+      size: {width: 35, height: 18}
+      title: "Sprint 15 Progress"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "Sprint Goal: Payment Integration"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "Duration: Jun 3 - Jun 16 (14 days)"
+  
+  - text:
+      position: {x: 2, y: 12}
+      content: "Days Remaining: 2"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "Story Points:"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "  Completed: 23/30 (77%)"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "  In Progress: 5"
+  
+  - text:
+      position: {x: 2, y: 17}
+      content: "  TODO: 2"
+  
+  - text:
+      position: {x: 2, y: 19}
+      content: "Burndown: [###===....] 77%"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "Team Velocity: 25.3 pts/sprint"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "Confidence: HIGH"
+
+  # Center panel - Active Tasks
+  - box:
+      position: {x: 37, y: 7}
+      size: {width: 55, height: 18}
+      title: "Active Tasks & Issues"
+  
+  - table:
+      position: {x: 39, y: 9}
+      headers: ["ID", "Title", "Assignee", "Status", "Priority"]
+      rows:
+        - ["US-341", "Payment Gateway API", "Sarah K.", "In Review", "HIGH"]
+        - ["US-342", "Checkout Flow UI", "Mike T.", "Testing", "HIGH"]
+        - ["BUG-89", "Cart Total Calculation", "Alex P.", "In Progress", "CRITICAL"]
+        - ["US-343", "Order Confirmation", "Lisa M.", "Development", "MEDIUM"]
+        - ["TASK-12", "Database Migration", "DevOps", "Blocked", "HIGH"]
+        - ["US-344", "Email Templates", "Emma W.", "Ready", "LOW"]
+        - ["DOC-45", "API Documentation", "John D.", "In Progress", "MEDIUM"]
+
+  # Right panel - Team Status
+  - box:
+      position: {x: 94, y: 7}
+      size: {width: 26, height: 18}
+      title: "Team Status"
+  
+  - text:
+      position: {x: 96, y: 9}
+      content: "Online: 7/8"
+  
+  - text:
+      position: {x: 96, y: 11}
+      content: "Sarah K.  [ACTIVE]"
+  
+  - text:
+      position: {x: 96, y: 12}
+      content: "Mike T.   [ACTIVE]"
+  
+  - text:
+      position: {x: 96, y: 13}
+      content: "Alex P.   [ACTIVE]"
+  
+  - text:
+      position: {x: 96, y: 14}
+      content: "Lisa M.   [MEETING]"
+  
+  - text:
+      position: {x: 96, y: 15}
+      content: "Emma W.   [ACTIVE]"
+  
+  - text:
+      position: {x: 96, y: 16}
+      content: "John D.   [LUNCH]"
+  
+  - text:
+      position: {x: 96, y: 17}
+      content: "DevOps    [ACTIVE]"
+  
+  - text:
+      position: {x: 96, y: 18}
+      content: "Tech Lead [OFFLINE]"
+  
+  - text:
+      position: {x: 96, y: 20}
+      content: "Stand-up: Tomorrow"
+  
+  - text:
+      position: {x: 96, y: 21}
+      content: "9:00 AM PST"
+  
+  - text:
+      position: {x: 96, y: 23}
+      content: "Demo: Friday 2 PM"
+
+  # Bottom section - Metrics and Alerts
+  - box:
+      position: {x: 0, y: 26}
+      size: {width: 60, height: 12}
+      title: "Key Metrics & Alerts"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "Build Status: [PASSING] Last: 14:23 (3 min ago)"
+  
+  - text:
+      position: {x: 2, y: 29}
+      content: "Test Coverage: 87% (+2% this sprint)"
+  
+  - text:
+      position: {x: 2, y: 30}
+      content: "Code Quality: A- (SonarQube)"
+  
+  - text:
+      position: {x: 2, y: 31}
+      content: "Performance: API avg 245ms"
+  
+  - text:
+      position: {x: 2, y: 33}
+      content: "ALERTS:"
+  
+  - text:
+      position: {x: 2, y: 34}
+      content: "[WARN] 2 dependencies need security updates"
+  
+  - text:
+      position: {x: 2, y: 35}
+      content: "[INFO] Production deployment scheduled for Monday"
+  
+  - text:
+      position: {x: 2, y: 36}
+      content: "[BLOCKED] Database migration waiting for approval"
+
+  # Right bottom - Quick Actions
+  - box:
+      position: {x: 62, y: 26}
+      size: {width: 58, height: 12}
+      title: "Quick Actions & Notifications"
+  
+  - text:
+      position: {x: 64, y: 28}
+      content: "[1] Create New Task    [2] Update Story Points   [3] Run Tests"
+  
+  - text:
+      position: {x: 64, y: 29}
+      content: "[4] Deploy to Staging  [5] Generate Report       [6] Team Chat"
+  
+  - text:
+      position: {x: 64, y: 31}
+      content: "Recent Activity:"
+  
+  - text:
+      position: {x: 64, y: 32}
+      content: "14:25 - Alex P. moved BUG-89 to 'In Progress'"
+  
+  - text:
+      position: {x: 64, y: 33}
+      content: "14:20 - Build #245 passed all tests"
+  
+  - text:
+      position: {x: 64, y: 34}
+      content: "14:15 - Sarah K. created pull request #89"
+  
+  - text:
+      position: {x: 64, y: 35}
+      content: "14:10 - Mike T. updated US-342 description"
+  
+  - text:
+      position: {x: 64, y: 36}
+      content: "14:05 - DevOps updated deployment pipeline"
+
+  # Footer with system info
+  - line:
+      start: {x: 0, y: 39}
+      end: {x: 119, y: 39}
+  
+  - text:
+      position: {x: 2, y: 41}
+      content: "Connected to: JIRA | GitHub | Slack | Jenkins | SonarQube"
+  
+  - text:
+      position: {x: 2, y: 42}
+      content: "Environment: Production | Staging | Development | All systems operational"
+  
+  - text:
+      position: {x: 85, y: 41}
+      content: "Press [F1] for help | [F12] Settings"
+  
+  - text:
+      position: {x: 85, y: 42}
+      content: "Auto-refresh: 30s | Last update: 14:32"
+
+  # Progress indicators
+  - text:
+      position: {x: 40, y: 45}
+      content: "Sprint Progress: [##########..........] 77% Complete"
+  
+  - text:
+      position: {x: 40, y: 46}
+      content: "Release Readiness: [########..........] 65% Ready"

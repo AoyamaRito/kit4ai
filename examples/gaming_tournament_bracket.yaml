@@ -1,0 +1,322 @@
+canvas:
+  width: 100
+  height: 45
+
+elements:
+  # Tournament Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 100, height: 4}
+      title: "eSports Championship 2024 - Grand Tournament Bracket"
+  
+  - text:
+      position: {x: 5, y: 2}
+      content: "Game: Valorant | Prize Pool: $100,000 | Date: June 16-18, 2024"
+  
+  - text:
+      position: {x: 70, y: 2}
+      content: "Live: 47,832 viewers"
+
+  # Round headers
+  - text:
+      position: {x: 5, y: 6}
+      content: "QUARTERFINALS"
+  
+  - text:
+      position: {x: 30, y: 6}
+      content: "SEMIFINALS"
+  
+  - text:
+      position: {x: 50, y: 6}
+      content: "FINALS"
+  
+  - text:
+      position: {x: 68, y: 6}
+      content: "WINNER"
+  
+  - text:
+      position: {x: 82, y: 6}
+      content: "LIVE STATS"
+
+  # Quarterfinals - Left side
+  - box:
+      position: {x: 2, y: 8}
+      size: {width: 20, height: 5}
+  
+  - text:
+      position: {x: 3, y: 9}
+      content: "Team Alpha"
+  
+  - text:
+      position: {x: 3, y: 10}
+      content: "vs"
+  
+  - text:
+      position: {x: 3, y: 11}
+      content: "Team Beta"
+  
+  - text:
+      position: {x: 15, y: 10}
+      content: "2-1"
+
+  - box:
+      position: {x: 2, y: 14}
+      size: {width: 20, height: 5}
+  
+  - text:
+      position: {x: 3, y: 15}
+      content: "Team Gamma"
+  
+  - text:
+      position: {x: 3, y: 16}
+      content: "vs"
+  
+  - text:
+      position: {x: 3, y: 17}
+      content: "Team Delta"
+  
+  - text:
+      position: {x: 15, y: 16}
+      content: "2-0"
+
+  - box:
+      position: {x: 2, y: 20}
+      size: {width: 20, height: 5}
+  
+  - text:
+      position: {x: 3, y: 21}
+      content: "Team Echo"
+  
+  - text:
+      position: {x: 3, y: 22}
+      content: "vs"
+  
+  - text:
+      position: {x: 3, y: 23}
+      content: "Team Foxtrot"
+  
+  - text:
+      position: {x: 15, y: 22}
+      content: "2-1"
+
+  - box:
+      position: {x: 2, y: 26}
+      size: {width: 20, height: 5}
+  
+  - text:
+      position: {x: 3, y: 27}
+      content: "Team Golf"
+  
+  - text:
+      position: {x: 3, y: 28}
+      content: "vs"
+  
+  - text:
+      position: {x: 3, y: 29}
+      content: "Team Hotel"
+  
+  - text:
+      position: {x: 15, y: 28}
+      content: "LIVE"
+
+  # Connecting lines from quarters to semis
+  - line:
+      start: {x: 22, y: 10}
+      end: {x: 26, y: 10}
+  
+  - line:
+      start: {x: 22, y: 16}
+      end: {x: 26, y: 16}
+  
+  - line:
+      start: {x: 22, y: 22}
+      end: {x: 26, y: 22}
+  
+  - line:
+      start: {x: 22, y: 28}
+      end: {x: 26, y: 28}
+
+  # Semifinals
+  - box:
+      position: {x: 27, y: 12}
+      size: {width: 18, height: 5}
+  
+  - text:
+      position: {x: 28, y: 13}
+      content: "Team Alpha"
+  
+  - text:
+      position: {x: 28, y: 14}
+      content: "vs"
+  
+  - text:
+      position: {x: 28, y: 15}
+      content: "Team Gamma"
+  
+  - text:
+      position: {x: 38, y: 14}
+      content: "1-2"
+
+  - box:
+      position: {x: 27, y: 24}
+      size: {width: 18, height: 5}
+  
+  - text:
+      position: {x: 28, y: 25}
+      content: "Team Echo"
+  
+  - text:
+      position: {x: 28, y: 26}
+      content: "vs"
+  
+  - text:
+      position: {x: 28, y: 27}
+      content: "TBD"
+  
+  - text:
+      position: {x: 38, y: 26}
+      content: "WAIT"
+
+  # Connecting lines to finals
+  - line:
+      start: {x: 45, y: 14}
+      end: {x: 49, y: 14}
+  
+  - line:
+      start: {x: 45, y: 26}
+      end: {x: 49, y: 26}
+
+  # Finals
+  - box:
+      position: {x: 50, y: 18}
+      size: {width: 16, height: 6}
+  
+  - text:
+      position: {x: 51, y: 19}
+      content: "GRAND FINAL"
+  
+  - text:
+      position: {x: 51, y: 21}
+      content: "Team Gamma"
+  
+  - text:
+      position: {x: 51, y: 22}
+      content: "vs"
+  
+  - text:
+      position: {x: 51, y: 23}
+      content: "TBD"
+
+  # Winner's circle
+  - box:
+      position: {x: 68, y: 19}
+      size: {width: 12, height: 4}
+      title: "Champion"
+  
+  - text:
+      position: {x: 71, y: 21}
+      content: "TBD"
+
+  # Live stats panel
+  - box:
+      position: {x: 82, y: 8}
+      size: {width: 18, height: 25}
+      title: "Tournament Stats"
+  
+  - text:
+      position: {x: 83, y: 10}
+      content: "Total Teams: 8"
+  
+  - text:
+      position: {x: 83, y: 11}
+      content: "Matches Played: 6"
+  
+  - text:
+      position: {x: 83, y: 12}
+      content: "Remaining: 3"
+  
+  - text:
+      position: {x: 83, y: 14}
+      content: "Current Match:"
+  
+  - text:
+      position: {x: 83, y: 15}
+      content: "Golf vs Hotel"
+  
+  - text:
+      position: {x: 83, y: 16}
+      content: "Map: Ascent"
+  
+  - text:
+      position: {x: 83, y: 17}
+      content: "Score: 11-8"
+  
+  - text:
+      position: {x: 83, y: 18}
+      content: "Round: 20/25"
+  
+  - text:
+      position: {x: 83, y: 20}
+      content: "Top Performer:"
+  
+  - text:
+      position: {x: 83, y: 21}
+      content: "Player: Ace-47"
+  
+  - text:
+      position: {x: 83, y: 22}
+      content: "K/D: 24/7"
+  
+  - text:
+      position: {x: 83, y: 23}
+      content: "ADR: 172"
+  
+  - text:
+      position: {x: 83, y: 25}
+      content: "Next Match:"
+  
+  - text:
+      position: {x: 83, y: 26}
+      content: "20:00 GMT"
+  
+  - text:
+      position: {x: 83, y: 27}
+      content: "Semi-Final #2"
+  
+  - text:
+      position: {x: 83, y: 29}
+      content: "Prediction:"
+  
+  - text:
+      position: {x: 83, y: 30}
+      content: "Echo 65%"
+  
+  - text:
+      position: {x: 83, y: 31}
+      content: "Winner 35%"
+
+  # Footer with broadcast info
+  - line:
+      start: {x: 0, y: 35}
+      end: {x: 99, y: 35}
+  
+  - text:
+      position: {x: 2, y: 37}
+      content: "LIVE BROADCAST: Twitch.tv/ESportsChampionship | YouTube Gaming | Discord"
+  
+  - text:
+      position: {x: 2, y: 38}
+      content: "Sponsors: RedBull Gaming | NVIDIA | SteelSeries | HyperX"
+  
+  - text:
+      position: {x: 2, y: 40}
+      content: "Commentary: CasterA & CasterB | Analysis: ProGamer | Host: SportsCaster"
+  
+  - text:
+      position: {x: 2, y: 41}
+      content: "Next: Grand Final - June 18, 2024 at 21:00 GMT | Prize: $50,000 for 1st place"
+
+  # Progress indicator
+  - text:
+      position: {x: 25, y: 43}
+      content: "Tournament Progress: [######........] 60% Complete | Day 2 of 3"

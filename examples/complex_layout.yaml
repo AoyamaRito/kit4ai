@@ -1,0 +1,142 @@
+canvas:
+  width: 120
+  height: 40
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "Enterprise Control Panel v2.4.1"
+  
+  - text:
+      position: {x: 90, y: 1}
+      content: "2024-06-15 14:32:17"
+  
+  # Navigation bar
+  - line:
+      start: {x: 0, y: 3}
+      end: {x: 119, y: 3}
+  
+  - text:
+      position: {x: 2, y: 4}
+      content: "[F1]File [F2]Edit [F3]View [F4]Tools [F5]Reports [F6]Admin [ESC]Exit"
+  
+  - line:
+      start: {x: 0, y: 5}
+      end: {x: 119, y: 5}
+  
+  # Left sidebar - System Overview
+  - box:
+      position: {x: 0, y: 6}
+      size: {width: 30, height: 15}
+      title: "System Overview"
+  
+  - text:
+      position: {x: 2, y: 8}
+      content: "Server: PROD-01"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "Status: OPERATIONAL"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "Services: 12/12"
+  
+  - text:
+      position: {x: 2, y: 12}
+      content: "Alerts: 0"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "Load Average: 0.42"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "Response Time: 124ms"
+  
+  # Center - Performance Metrics
+  - box:
+      position: {x: 32, y: 6}
+      size: {width: 56, height: 15}
+      title: "Performance Metrics"
+  
+  - table:
+      position: {x: 34, y: 8}
+      headers: ["Metric", "Current", "Average", "Peak"]
+      rows:
+        - ["CPU Usage", "45%", "38%", "72%"]
+        - ["Memory", "8.2GB", "7.5GB", "12.1GB"]
+        - ["Network I/O", "1.2Mbps", "0.8Mbps", "4.5Mbps"]
+        - ["Disk I/O", "120MB/s", "95MB/s", "180MB/s"]
+        - ["Connections", "1,248", "980", "2,100"]
+  
+  # Right sidebar - Quick Actions
+  - box:
+      position: {x: 90, y: 6}
+      size: {width: 30, height: 15}
+      title: "Quick Actions"
+  
+  - text:
+      position: {x: 92, y: 8}
+      content: "[1] Restart Services"
+  
+  - text:
+      position: {x: 92, y: 10}
+      content: "[2] Clear Cache"
+  
+  - text:
+      position: {x: 92, y: 12}
+      content: "[3] Run Diagnostics"
+  
+  - text:
+      position: {x: 92, y: 14}
+      content: "[4] Backup Database"
+  
+  - text:
+      position: {x: 92, y: 16}
+      content: "[5] View Logs"
+  
+  - text:
+      position: {x: 92, y: 18}
+      content: "[6] Generate Report"
+  
+  # Bottom section - Recent Events
+  - box:
+      position: {x: 0, y: 22}
+      size: {width: 120, height: 12}
+      title: "Recent Events"
+  
+  - text:
+      position: {x: 2, y: 24}
+      content: "[2024-06-15 14:31:45] INFO: Automated backup completed successfully"
+  
+  - text:
+      position: {x: 2, y: 25}
+      content: "[2024-06-15 14:30:12] INFO: User 'admin' logged in from 192.168.1.100"
+  
+  - text:
+      position: {x: 2, y: 26}
+      content: "[2024-06-15 14:28:33] WARN: High memory usage detected on worker-03 (85%)"
+  
+  - text:
+      position: {x: 2, y: 27}
+      content: "[2024-06-15 14:25:07] INFO: Configuration reload completed"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "[2024-06-15 14:20:15] INFO: SSL certificate renewed for domain.com"
+  
+  # Footer
+  - line:
+      start: {x: 0, y: 35}
+      end: {x: 119, y: 35}
+  
+  - text:
+      position: {x: 2, y: 37}
+      content: "Connected to: DATACENTER-WEST | Region: US-WEST-2 | Latency: 12ms"
+  
+  - text:
+      position: {x: 80, y: 37}
+      content: "Press [H] for help | [Q] to quit"

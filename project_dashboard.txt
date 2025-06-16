@@ -1,0 +1,47 @@
++-[ Project Management Dashboard - DevOps Portal v3.2 ]----------------------------------------------------------------+
+|                                                                                                                      |
+|    Project: E-Commerce Platform Rebuild | Sprint 15 | Team: Alpha                       2024-06-16 | Week 24         |
++----------------------------------------------------------------------------------------------------------------------+
+------------------------------------------------------------------------------------------------------------------------
+  [CTRL+1] Overview [CTRL+2] Sprint [CTRL+3] Backlog [CTRL+4] Reports [CTRL+5] Team [ESC] Exit                          
+------------------------------------------------------------------------------------------------------------------------
++-[ Sprint 15 Progress ]----------+  +-[ Active Tasks & Issues ]---------------------------+  +-[ Team Status ]--------+
+|                                 |  |                                                     |  |                        |
+| Sprint Goal: Payment Integration|  | +---------+------------------------+----------+--------|-Online: 7/8---+        |
+|                                 |  | | ID      | Title                  | Assignee | Status |    | Priority |        |
+| Duration: Jun 3 - Jun 16 (14 days) | +---------+------------------------+----------+--------|-Sarah K.  [ACTIVE]     |
+| Days Remaining: 2               |  | | US-341  | Payment Gateway API    | Sarah K. | In Revi|wMike T.   [ACTIVE]     |
+|                                 |  | | US-342  | Checkout Flow UI       | Mike T.  | Testing| Alex P.   [ACTIVE]     |
+| Story Points:                   |  | | BUG-89  | Cart Total Calculation | Alex P.  | In Prog|eLisa M.   [MEETING]    |
+|   Completed: 23/30 (77%)        |  | | US-343  | Order Confirmation     | Lisa M.  | Develop|eEmma W.   [ACTIVE]     |
+|   In Progress: 5                |  | | TASK-12 | Database Migration     | DevOps   | Blocked| John D.   [LUNCH]      |
+|   TODO: 2                       |  | | US-344  | Email Templates        | Emma W.  | Ready  | DevOps    [ACTIVE]     |
+|                                 |  | | DOC-45  | API Documentation      | John D.  | In Prog|eTech Lead [OFFLINE]    |
+| Burndown: [###===....] 77%      |  | +---------+------------------------+----------+--------|----+----------+        |
+|                                 |  |                                                     |  | Stand-up: Tomorrow     |
+| Team Velocity: 25.3 pts/sprint  |  |                                                     |  | 9:00 AM PST            |
+|                                 |  |                                                     |  |                        |
+| Confidence: HIGH                |  |                                                     |  | Demo: Friday 2 PM      |
++---------------------------------+  +-----------------------------------------------------+  +------------------------+
+                                                                                                                        
++-[ Key Metrics & Alerts ]---------------------------------+  +-[ Quick Actions & Notifications ]----------------------+
+|                                                          |  |                                                        |
+| Build Status: [PASSING] Last: 14:23 (3 min ago)          |  | [1] Create New Task    [2] Update Story Points   [3] Run
+| Test Coverage: 87% (+2% this sprint)                     |  | [4] Deploy to Staging  [5] Generate Report       [6] Tea
+| Code Quality: A- (SonarQube)                             |  |                                                        |
+| Performance: API avg 245ms                               |  | Recent Activity:                                       |
+|                                                          |  | 14:25 - Alex P. moved BUG-89 to 'In Progress'          |
+| ALERTS:                                                  |  | 14:20 - Build #245 passed all tests                    |
+| [WARN] 2 dependencies need security updates              |  | 14:15 - Sarah K. created pull request #89              |
+| [INFO] Production deployment scheduled for Monday        |  | 14:10 - Mike T. updated US-342 description             |
+| [BLOCKED] Database migration waiting for approval        |  | 14:05 - DevOps updated deployment pipeline             |
++----------------------------------------------------------+  +--------------------------------------------------------+
+                                                                                                                        
+------------------------------------------------------------------------------------------------------------------------
+                                                                                                                        
+  Connected to: JIRA | GitHub | Slack | Jenkins | SonarQube                          Press [F1] for help | [F12] Setting
+  Environment: Production | Staging | Development | All systems operational          Auto-refresh: 30s | Last update: 14
+                                                                                                                        
+                                                                                                                        
+                                        Sprint Progress: [##########..........] 77% Complete                            
+                                        Release Readiness: [########..........] 65% Ready                               

@@ -37,6 +37,12 @@ go run main.go --template=simple --insert=design_doc.md:25 --backup
 
 # Claude Codeが利用可能オプションを確認
 go run main.go --help
+
+# 新機能: Claude CodeがYAML仕様からUIを生成
+go run main.go --yaml ui_spec.yaml
+
+# 新機能: Claude Codeが標準入力からYAMLを使用
+cat dashboard.yaml | go run main.go --yaml -
 ```
 
 **人間の開発者の皆様**: Claude Codeから生成された仕様書を受け取ることになります。このツールを直接使用することはありません。
@@ -116,6 +122,7 @@ Kit4AIは、AIが直接ASCIIアートを作成する際に発生するレイア�
 
 - **コマンドラインインターフェース**: テンプレート、幅オプション、ヘルプシステムを備えた完全なCLI
 - **複数テンプレート**: エンタープライズダッシュボード、モバイルインターフェース、シンプルレイアウト
+- **YAML入力サポート**: 宣言的YAML仕様からUIを生成（新機能！）
 - **レスポンシブ設計**: 異なるキャンバス幅（60, 72, 80, 100, 120文字）に自動適応
 - **ドキュメント挿入**: 既存ファイルの指定行に直接UI挿入
 - **バックアップサポート**: 既存ファイル変更時の自動バックアップ作成
@@ -168,6 +175,7 @@ PrintConfig       = 72x90    // A4用紙対応
 
 - Go 1.19以降
 - Git
+- gopkg.in/yaml.v3（自動インストール）
 
 ### ステップ1: リポジトリをクローン
 
@@ -227,6 +235,39 @@ go run main.go --output=my_dashboard.txt
 
 # ドキュメント挿入
 go run main.go --template=mobile --insert=document.txt:10 --backup
+
+# YAMLベースUI生成（新機能！）
+go run main.go --yaml examples/simple_dashboard.yaml
+go run main.go --yaml examples/mobile_ui.yaml --output=mobile.txt
+cat ui_spec.yaml | go run main.go --yaml -
+```
+
+### YAMLベースUI生成（新機能！）
+
+宣言的YAML仕様からUIを生成：
+
+```yaml
+# 例: simple_dashboard.yaml
+canvas:
+  width: 80
+  height: 30
+
+elements:
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 40, height: 10}
+      title: "ステータスパネル"
+  
+  - text:
+      position: {x: 2, y: 2}
+      content: "システムオンライン"
+  
+  - table:
+      position: {x: 0, y: 12}
+      headers: ["サービス", "ステータス"]
+      rows:
+        - ["API", "実行中"]
+        - ["データベース", "実行中"]
 ```
 
 ### ドキュメント挿入機能
@@ -242,6 +283,9 @@ go run main.go --template=enterprise --insert=design_doc.txt:999
 
 # バックアップなしでシンプルレイアウトを挿入
 go run main.go --template=simple --width=100 --insert=specification.md:15
+
+# YAML生成UIを挿入
+go run main.go --yaml dashboard.yaml --insert=spec.md:50 --backup
 ```
 
 ### プログラム的使用
@@ -281,6 +325,7 @@ func main() {
 - `--template` - 生成するUIテンプレート（enterprise, mobile, simple）
 - `--width` - キャンバス幅（60, 72, 80, 100, 120）
 - `--output` - 出力ファイル名（デフォルト：自動生成）
+- `--yaml` - 解析するYAMLファイル（標準入力は'-'）（新機能！）
 - `--help` - ヘルプ情報を表示
 - `--version` - バージョン情報を表示
 
@@ -392,13 +437,21 @@ Layout:
 
 ```
 kit4ai/
-├── pkg/canvas/
-│   ├── canvas.go      # 基本runeキャンバス
-│   ├── bytecanvas.go  # ASCII最適化キャンバス
-│   ├── textlayer.go   # 全角テキストサポート
-│   ├── layer.go       # レイヤー構成システム
-│   └── config.go      # 設定管理
-├── main.go            # 実装例
+├── pkg/
+│   ├── canvas/
+│   │   ├── canvas.go      # 基本runeキャンバス
+│   │   ├── bytecanvas.go  # ASCII最適化キャンバス
+│   │   ├── textlayer.go   # 全角テキストサポート
+│   │   ├── layer.go       # レイヤー構成システム
+│   │   └── config.go      # 設定管理
+│   └── yaml/
+│       ├── parser.go      # YAMLパーサー実装
+│       └── types.go       # YAML構造定義
+├── examples/
+│   ├── simple_dashboard.yaml
+│   ├── mobile_ui.yaml
+│   └── complex_layout.yaml
+├── main.go            # CLIと実装例
 ├── *.txt             # 生成されたUI仕様書
 ├── README.md         # 英語版ドキュメント
 └── README.ja.md      # 日本語版ドキュメント（このファイル）

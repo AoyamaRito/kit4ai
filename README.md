@@ -37,6 +37,12 @@ go run main.go --template=simple --insert=design_doc.md:25 --backup
 
 # Claude Code checks available options
 go run main.go --help
+
+# NEW: Claude Code generates UI from YAML specification
+go run main.go --yaml ui_spec.yaml
+
+# NEW: Claude Code uses YAML from stdin
+cat dashboard.yaml | go run main.go --yaml -
 ```
 
 **Human developers**: You will receive the generated specifications from Claude Code, not use this tool directly.
@@ -123,6 +129,7 @@ Kit4AI solves the layout misalignment problem that occurs when AI directly creat
 
 - **Command-Line Interface**: Full CLI with templates, width options, and help system
 - **Multiple Templates**: Enterprise dashboards, mobile interfaces, and simple layouts
+- **YAML Input Support**: Generate UI from declarative YAML specifications (NEW!)
 - **Responsive Design**: Automatically adapts to different canvas widths (60, 72, 80, 100, 120 characters)
 - **Document Insertion**: Insert UIs directly into existing files at specified line numbers
 - **Backup Support**: Automatic backup creation when modifying existing files
@@ -157,6 +164,7 @@ PrintConfig       = 72x90    // A4 paper friendly
 
 - Go 1.19 or later
 - Git
+- gopkg.in/yaml.v3 (automatically installed)
 
 ### Step 1: Clone the Repository
 
@@ -204,12 +212,19 @@ kit4ai/
 ├── go.mod              # Go module file
 ├── main.go             # Example implementations
 ├── pkg/
-│   └── canvas/
-│       ├── canvas.go
-│       ├── bytecanvas.go
-│       ├── textlayer.go
-│       ├── layer.go
-│       └── config.go
+│   ├── canvas/
+│   │   ├── canvas.go
+│   │   ├── bytecanvas.go
+│   │   ├── textlayer.go
+│   │   ├── layer.go
+│   │   └── config.go
+│   └── yaml/           # NEW: YAML parsing support
+│       ├── parser.go
+│       └── types.go
+├── examples/           # NEW: YAML examples
+│   ├── simple_dashboard.yaml
+│   ├── mobile_ui.yaml
+│   └── complex_layout.yaml
 ├── README.md
 └── generated files:
     ├── complex_enterprise_ui.txt
@@ -244,6 +259,39 @@ go run main.go --output=my_dashboard.txt
 
 # Document insertion
 go run main.go --template=mobile --insert=document.txt:10 --backup
+
+# YAML-based UI generation (NEW!)
+go run main.go --yaml examples/simple_dashboard.yaml
+go run main.go --yaml examples/mobile_ui.yaml --output=mobile.txt
+cat ui_spec.yaml | go run main.go --yaml -
+```
+
+### YAML-Based UI Generation (NEW!)
+
+Generate UIs from declarative YAML specifications:
+
+```yaml
+# Example: simple_dashboard.yaml
+canvas:
+  width: 80
+  height: 30
+
+elements:
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 40, height: 10}
+      title: "Status Panel"
+  
+  - text:
+      position: {x: 2, y: 2}
+      content: "System Online"
+  
+  - table:
+      position: {x: 0, y: 12}
+      headers: ["Service", "Status"]
+      rows:
+        - ["API", "Running"]
+        - ["Database", "Running"]
 ```
 
 ### Document Insertion Feature
@@ -259,6 +307,9 @@ go run main.go --template=enterprise --insert=design_doc.txt:999
 
 # Insert simple layout without backup
 go run main.go --template=simple --width=100 --insert=specification.md:15
+
+# Insert YAML-generated UI
+go run main.go --yaml dashboard.yaml --insert=spec.md:50 --backup
 ```
 
 ### Programmatic Usage
@@ -298,6 +349,7 @@ func main() {
 - `--template` - UI template to generate (enterprise, mobile, simple)
 - `--width` - Canvas width (60, 72, 80, 100, 120)
 - `--output` - Output file name (default: auto-generated)
+- `--yaml` - YAML file to parse (use '-' for stdin) (NEW!)
 - `--help` - Show help information
 - `--version` - Show version information
 
@@ -406,13 +458,21 @@ Layout:
 
 ```
 kit4ai/
-├── pkg/canvas/
-│   ├── canvas.go      # Basic rune canvas
-│   ├── bytecanvas.go  # ASCII-optimized canvas  
-│   ├── textlayer.go   # Full-width text support
-│   ├── layer.go       # Layer composition system
-│   └── config.go      # Configuration management
-├── main.go            # Example implementations
+├── pkg/
+│   ├── canvas/
+│   │   ├── canvas.go      # Basic rune canvas
+│   │   ├── bytecanvas.go  # ASCII-optimized canvas  
+│   │   ├── textlayer.go   # Full-width text support
+│   │   ├── layer.go       # Layer composition system
+│   │   └── config.go      # Configuration management
+│   └── yaml/
+│       ├── parser.go      # YAML parser implementation
+│       └── types.go       # YAML structure definitions
+├── examples/
+│   ├── simple_dashboard.yaml
+│   ├── mobile_ui.yaml
+│   └── complex_layout.yaml
+├── main.go            # CLI and example implementations
 ├── *.txt             # Generated UI specifications
 └── README.md         # This file
 ```

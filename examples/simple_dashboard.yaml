@@ -1,0 +1,68 @@
+canvas:
+  width: 80
+  height: 30
+
+elements:
+  # Main title box
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 80, height: 3}
+      title: "Dashboard"
+  
+  # Status panel
+  - box:
+      position: {x: 0, y: 4}
+      size: {width: 39, height: 10}
+      title: "System Status"
+  
+  - text:
+      position: {x: 2, y: 6}
+      content: "CPU Usage: 45%"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "Memory: 8.2GB / 16GB"
+  
+  - text:
+      position: {x: 2, y: 8}
+      content: "Disk: 120GB / 500GB"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "Network: 1.2 Mbps"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "Uptime: 15 days"
+  
+  # Activity log
+  - box:
+      position: {x: 41, y: 4}
+      size: {width: 39, height: 10}
+      title: "Activity Log"
+  
+  - text:
+      position: {x: 43, y: 6}
+      content: "[14:23] User login: admin"
+  
+  - text:
+      position: {x: 43, y: 7}
+      content: "[14:25] Backup completed"
+  
+  - text:
+      position: {x: 43, y: 8}
+      content: "[14:30] Service restarted"
+  
+  - text:
+      position: {x: 43, y: 9}
+      content: "[14:45] Config updated"
+  
+  # Services table
+  - table:
+      position: {x: 0, y: 15}
+      headers: ["Service", "Status", "Port", "Memory"]
+      rows:
+        - ["Web Server", "Running", "80", "512MB"]
+        - ["Database", "Running", "5432", "2GB"]
+        - ["Cache", "Running", "6379", "256MB"]
+        - ["Queue", "Stopped", "5672", "0MB"]

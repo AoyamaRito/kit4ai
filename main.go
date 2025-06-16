@@ -8,6 +8,7 @@ import (
 	"strconv"
 	"strings"
 	"kit4ai/pkg/canvas"
+	"kit4ai/pkg/yaml"
 )
 
 func main() {
@@ -20,6 +21,7 @@ func main() {
 		backup   = flag.Bool("backup", false, "Create backup when inserting into existing file")
 		help     = flag.Bool("help", false, "Show help information")
 		version  = flag.Bool("version", false, "Show version information")
+		yamlFile = flag.String("yaml", "", "YAML file to parse (use '-' for stdin)")
 	)
 	
 	flag.Usage = func() {
@@ -55,6 +57,15 @@ func main() {
 	
 	if *version {
 		fmt.Println("Kit4AI v1.0.0 - ASCII Art UI Specification Tool")
+		return
+	}
+	
+	// Check if YAML mode
+	if *yamlFile != "" {
+		if err := processYAML(*yamlFile, *output, *insert, *backup); err != nil {
+			fmt.Fprintf(os.Stderr, "Error: %v\n", err)
+			os.Exit(1)
+		}
 		return
 	}
 	
@@ -535,3 +546,59 @@ func generateSimpleUI(outputFile string, insertMode bool) string {
 	
 	return output
 }
+
+// processYAML handles YAML input processing
+func processYAML(yamlFile, outputFile, insertSpec string, backup bool) error {
+	var reader *os.File
+	var err error
+	
+	// Open YAML file or stdin
+	if yamlFile == "-" {
+		reader = os.Stdin
+	} else {
+		reader, err = os.Open(yamlFile)
+		if err != nil {
+			return fmt.Errorf("failed to open YAML file: %w", err)
+		}
+		defer reader.Close()
+	}
+	
+	// Parse YAML
+	parser := yaml.NewParser()
+	spec, err := parser.Parse(reader)
+	if err != nil {
+		return fmt.Errorf("failed to parse YAML: %w", err)
+	}
+	
+	// Render to ASCII art
+	result, err := parser.Render(spec)
+	if err != nil {
+		return fmt.Errorf("failed to render: %w", err)
+	}
+	
+	// Handle output
+	if insertSpec != "" {
+		// Insert mode
+		parts := strings.Split(insertSpec, ":")
+		if len(parts) != 2 {
+			return fmt.Errorf("insert format must be 'file:line'")
+		}
+		
+		insertFile := parts[0]
+		insertLine, err := strconv.Atoi(parts[1])
+		if err != nil {
+			return fmt.Errorf("invalid line number: %w", err)
+		}
+		
+		return insertIntoFile(insertFile, insertLine, result, backup)
+	} else if outputFile != "" {
+		// Write to specified file
+		return os.WriteFile(outputFile, []byte(result), 0644)
+	} else {
+		// Write to stdout
+		fmt.Print(result)
+	}
+	
+	return nil
+}
+

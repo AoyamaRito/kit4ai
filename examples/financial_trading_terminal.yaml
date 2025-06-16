@@ -1,0 +1,252 @@
+canvas:
+  width: 120
+  height: 40
+
+elements:
+  # Trading Terminal Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "Professional Trading Terminal v4.7 | Real-Time Market Data"
+  
+  - text:
+      position: {x: 5, y: 1}
+      content: "Account: PRO-8847291 | Balance: $487,392.18 | P&L Today: +$12,847 (+2.7%)"
+  
+  - text:
+      position: {x: 85, y: 1}
+      content: "NYSE OPEN | 14:32:45 EST"
+
+  # Market Overview
+  - box:
+      position: {x: 0, y: 4}
+      size: {width: 40, height: 12}
+      title: "Market Overview"
+  
+  - table:
+      position: {x: 2, y: 6}
+      headers: ["Index", "Price", "Change", "%"]
+      rows:
+        - ["S&P 500", "4,235.67", "+24.18", "+0.58%"]
+        - ["NASDAQ", "13,847.39", "+187.23", "+1.37%"]
+        - ["DOW", "34,567.82", "-45.67", "-0.13%"]
+        - ["VIX", "18.47", "-1.23", "-6.24%"]
+        - ["DXY", "102.84", "+0.15", "+0.15%"]
+
+  # Active Positions
+  - box:
+      position: {x: 42, y: 4}
+      size: {width: 45, height: 12}
+      title: "Active Positions"
+  
+  - table:
+      position: {x: 44, y: 6}
+      headers: ["Symbol", "Qty", "Entry", "Current", "P&L"]
+      rows:
+        - ["AAPL", "500", "178.45", "182.30", "+$1,925"]
+        - ["TSLA", "200", "245.80", "238.92", "-$1,376"]
+        - ["NVDA", "150", "487.20", "502.15", "+$2,243"]
+        - ["MSFT", "300", "334.67", "341.23", "+$1,968"]
+        - ["AMZN", "100", "127.89", "132.47", "+$458"]
+
+  # Watchlist
+  - box:
+      position: {x: 89, y: 4}
+      size: {width: 31, height: 12}
+      title: "Watchlist"
+  
+  - text:
+      position: {x: 91, y: 6}
+      content: "GOOGL  $139.47  +2.15%"
+  
+  - text:
+      position: {x: 91, y: 7}
+      content: "META   $287.63  +1.89%"
+  
+  - text:
+      position: {x: 91, y: 8}
+      content: "NFLX   $401.28  -0.45%"
+  
+  - text:
+      position: {x: 91, y: 9}
+      content: "PYPL   $78.92   +3.24%"
+  
+  - text:
+      position: {x: 91, y: 10}
+      content: "UBER   $45.67   -1.12%"
+  
+  - text:
+      position: {x: 91, y: 11}
+      content: "COIN   $89.34   +8.76%"
+  
+  - text:
+      position: {x: 91, y: 12}
+      content: "AMD    $124.58  +4.23%"
+  
+  - text:
+      position: {x: 91, y: 13}
+      content: "INTC   $42.19   -2.15%"
+  
+  - text:
+      position: {x: 91, y: 14}
+      content: "CRM    $198.45  +1.67%"
+
+  # Price Chart (simulated)
+  - box:
+      position: {x: 0, y: 17}
+      size: {width: 60, height: 15}
+      title: "AAPL - 1D Chart | $182.30 (+$3.85 | +2.16%)"
+  
+  - text:
+      position: {x: 2, y: 19}
+      content: "185.00 |                    ***"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "184.00 |                 ***    *"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "183.00 |              ***         **"
+  
+  - text:
+      position: {x: 2, y: 22}
+      content: "182.00 |           ***              ***  <- Current"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "181.00 |        ***                    *"
+  
+  - text:
+      position: {x: 2, y: 24}
+      content: "180.00 |     ***"
+  
+  - text:
+      position: {x: 2, y: 25}
+      content: "179.00 |  ***"
+  
+  - text:
+      position: {x: 2, y: 26}
+      content: "178.00 |**"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "Volume: 87.2M | Avg: 52.3M | RSI: 67.8 | MACD: Bullish"
+  
+  - text:
+      position: {x: 2, y: 29}
+      content: "Resistance: $185.50 | Support: $178.20"
+
+  # Order Entry
+  - box:
+      position: {x: 62, y: 17}
+      size: {width: 28, height: 15}
+      title: "Quick Order Entry"
+  
+  - text:
+      position: {x: 64, y: 19}
+      content: "Symbol: [AAPL________]"
+  
+  - text:
+      position: {x: 64, y: 20}
+      content: "Action: [BUY ] [SELL]"
+  
+  - text:
+      position: {x: 64, y: 21}
+      content: "Qty:    [100_________]"
+  
+  - text:
+      position: {x: 64, y: 22}
+      content: "Type:   [MARKET_____]"
+  
+  - text:
+      position: {x: 64, y: 23}
+      content: "Price:  [182.30_____]"
+  
+  - text:
+      position: {x: 64, y: 25}
+      content: "Est. Cost: $18,230.00"
+  
+  - text:
+      position: {x: 64, y: 26}
+      content: "Buying Power: $92,847"
+  
+  - text:
+      position: {x: 64, y: 28}
+      content: "[PLACE ORDER] [CANCEL]"
+  
+  - text:
+      position: {x: 64, y: 30}
+      content: "Risk Management:"
+  
+  - text:
+      position: {x: 64, y: 31}
+      content: "Stop Loss: $175.00"
+
+  # News Feed
+  - box:
+      position: {x: 92, y: 17}
+      size: {width: 28, height: 15}
+      title: "Market News"
+  
+  - text:
+      position: {x: 94, y: 19}
+      content: "14:30 - Fed Minutes"
+  
+  - text:
+      position: {x: 94, y: 20}
+      content: "Show Hawkish Stance"
+  
+  - text:
+      position: {x: 94, y: 22}
+      content: "14:25 - AAPL Announces"
+  
+  - text:
+      position: {x: 94, y: 23}
+      content: "AI Partnership Deal"
+  
+  - text:
+      position: {x: 94, y: 25}
+      content: "14:20 - Tech Sector"
+  
+  - text:
+      position: {x: 94, y: 26}
+      content: "Outperforms Market"
+  
+  - text:
+      position: {x: 94, y: 28}
+      content: "14:15 - Oil Prices"
+  
+  - text:
+      position: {x: 94, y: 29}
+      content: "Rise on Supply Cuts"
+  
+  - text:
+      position: {x: 94, y: 31}
+      content: "[More News...]"
+
+  # Footer with system status
+  - line:
+      start: {x: 0, y: 33}
+      end: {x: 119, y: 33}
+  
+  - text:
+      position: {x: 2, y: 35}
+      content: "Data Feed: LIVE | Latency: 12ms | Orders: 847 today | Commission: $4.95/trade"
+  
+  - text:
+      position: {x: 2, y: 36}
+      content: "Risk Level: MODERATE | Day Trade Count: 2/3 | Margin Used: 34% | Maintenance: $45K"
+  
+  - text:
+      position: {x: 75, y: 35}
+      content: "Hot Keys: F1-Buy F2-Sell F3-Close"
+  
+  - text:
+      position: {x: 75, y: 36}
+      content: "Connected: NYSE | NASDAQ | Options"
+
+  # Real-time alerts
+  - text:
+      position: {x: 30, y: 38}
+      content: "[ALERT] TSLA approaching stop loss at $235.00 | [INFO] Market volatility increasing"

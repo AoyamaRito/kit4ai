@@ -1,0 +1,112 @@
+canvas:
+  width: 50
+  height: 35
+  japanese_mode: true
+
+elements:
+  # Simple Header
+  - text:
+      position: {x: 15, y: 0}
+      content: "🎭 Fake Gods TRPG"
+  
+  - text:
+      position: {x: 10, y: 1}
+      content: "14:35 | 📍 村外れの神社 | 👥 3人"
+
+  # Main Character Display (Large)
+  - box:
+      position: {x: 0, y: 2}
+      size: {width: 50, height: 20}
+      title: ""
+  
+  # Character Art (Large)
+  - text:
+      position: {x: 22, y: 4}
+      content: "👸"
+  
+  - text:
+      position: {x: 18, y: 6}
+      content: "お姫様 エレナ"
+  
+  # Character Status
+  - text:
+      position: {x: 15, y: 8}
+      content: "😢 不安げ | 💔 困っている"
+
+  # Speech Bubble (Main Focus)
+  - text:
+      position: {x: 3, y: 10}
+      content: "┌────────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 3, y: 11}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 12}
+      content: "│ 「ありがとうございます、勇敢な方...       │"
+  
+  - text:
+      position: {x: 3, y: 13}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 14}
+      content: "│  でも、あのゴブリンがずっと私を          │"
+  
+  - text:
+      position: {x: 3, y: 15}
+      content: "│  脅しているのです...                     │"
+  
+  - text:
+      position: {x: 3, y: 16}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 17}
+      content: "│  一人では怖くて...どうしたら...」        │"
+  
+  - text:
+      position: {x: 3, y: 18}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 19}
+      content: "└────────────────────────────────────────────┘"
+
+  # Scroll Indicator
+  - text:
+      position: {x: 18, y: 22}
+      content: "▼ スクロールで次の台詞 ▼"
+  
+  - text:
+      position: {x: 20, y: 23}
+      content: "👆 タップで選択肢表示"
+
+  # Quick Action Hints
+  - box:
+      position: {x: 0, y: 24}
+      size: {width: 50, height: 6}
+      title: "⚡ クイックアクション"
+  
+  - text:
+      position: {x: 2, y: 26}
+      content: "💬 話す | ⚔️ 戦う | 🤝 助ける | 🏃 逃げる"
+  
+  - text:
+      position: {x: 2, y: 27}
+      content: "長押し → 詳細選択 | タップ → すぐ実行"
+
+  # Navigation
+  - text:
+      position: {x: 5, y: 30}
+      content: "◀️ 前の台詞 | ▶️ 次の台詞 | 📋 全体表示"
+  
+  - text:
+      position: {x: 12, y: 31}
+      content: "🌨️ 雪渓モード: 自動スクロール"
+  
+  # Progress
+  - text:
+      position: {x: 18, y: 33}
+      content: "台詞 5/12 | シーン進行度 40%"

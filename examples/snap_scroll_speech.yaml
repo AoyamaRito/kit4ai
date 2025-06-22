@@ -1,0 +1,76 @@
+canvas:
+  width: 50
+  height: 25
+  japanese_mode: true
+
+elements:
+  # Speech Screen 1
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 50, height: 25}
+      title: "台詞1 - 姫エレナ"
+  
+  # Large Character
+  - text:
+      position: {x: 22, y: 3}
+      content: "👸"
+  
+  - text:
+      position: {x: 18, y: 5}
+      content: "姫 エレナ"
+  
+  # Speech Bubble
+  - text:
+      position: {x: 3, y: 8}
+      content: "┌────────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 3, y: 9}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 10}
+      content: "│「ありがとうございます、勇敢な方...        │"
+  
+  - text:
+      position: {x: 3, y: 11}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 12}
+      content: "│ でも、あのゴブリンがずっと私を          │"
+  
+  - text:
+      position: {x: 3, y: 13}
+      content: "│ 脅しているのです...」                   │"
+  
+  - text:
+      position: {x: 3, y: 14}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 3, y: 15}
+      content: "└────────────────────────────────────────────┘"
+  
+  # Scroll Indicator
+  - text:
+      position: {x: 22, y: 18}
+      content: "▼"
+  
+  - text:
+      position: {x: 15, y: 19}
+      content: "スクロールで次の台詞"
+  
+  # Progress
+  - text:
+      position: {x: 18, y: 21}
+      content: "台詞 1/4"
+  
+  # Snap Boundary
+  - text:
+      position: {x: 0, y: 23}
+      content: "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  
+  - text:
+      position: {x: 20, y: 24}
+      content: "[SNAP POINT]"

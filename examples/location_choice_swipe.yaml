@@ -1,0 +1,133 @@
+canvas:
+  width: 120
+  height: 30
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "🗺️ 場所選択 - スワイプで移動先を選択"
+  
+  - text:
+      position: {x: 35, y: 1}
+      content: "← 前の場所    |    そのまま    |    次の場所 →"
+
+  # Current Location (Center)
+  - box:
+      position: {x: 30, y: 3}
+      size: {width: 60, height: 20}
+      title: "📍 現在地: 村外れの神社"
+  
+  # Current location illustration
+  - text:
+      position: {x: 45, y: 5}
+      content: "⛩️ 神社の境内 ⛩️"
+  
+  - text:
+      position: {x: 42, y: 6}
+      content: "🌸    🔔    🌸"
+  
+  - text:
+      position: {x: 38, y: 7}
+      content: "🏮   ⛩️👹⛩️   🏮"
+  
+  - text:
+      position: {x: 42, y: 8}
+      content: "🌸    🕯️    🌸"
+  
+  - text:
+      position: {x: 32, y: 10}
+      content: "状況: ゴブリンとの遭遇戦"
+  
+  - text:
+      position: {x: 32, y: 11}
+      content: "危険度: ★★☆☆☆"
+  
+  - text:
+      position: {x: 32, y: 12}
+      content: "特徴: 神聖な場所、退魔効果"
+  
+  # Choice options
+  - text:
+      position: {x: 32, y: 14}
+      content: "💡 選択肢:"
+  
+  - text:
+      position: {x: 32, y: 15}
+      content: "🔄 [そのまま] - 戦闘継続"
+  
+  - text:
+      position: {x: 32, y: 16}
+      content: "🏃 [移動] - 他の場所へ"
+  
+  - text:
+      position: {x: 32, y: 17}
+      content: "🔍 [探索] - 境内を調査"
+
+  # Left option hint
+  - box:
+      position: {x: 0, y: 8}
+      size: {width: 25, height: 10}
+      title: "← 森の奥"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "🌲🌲🌲"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "🦉🐺🍄"
+  
+  - text:
+      position: {x: 2, y: 12}
+      content: "🌙✨🌧️"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "危険度: ★★★☆☆"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "夜の森"
+
+  # Right option hint  
+  - box:
+      position: {x: 95, y: 8}
+      size: {width: 25, height: 10}
+      title: "城下町 →"
+  
+  - text:
+      position: {x: 97, y: 10}
+      content: "🏰🏠🏪"
+  
+  - text:
+      position: {x: 97, y: 11}
+      content: "👥💰🛡️"
+  
+  - text:
+      position: {x: 97, y: 12}
+      content: "🍞🗡️📜"
+  
+  - text:
+      position: {x: 97, y: 14}
+      content: "危険度: ★☆☆☆☆"
+  
+  - text:
+      position: {x: 97, y: 15}
+      content: "安全な街"
+
+  # Swipe instructions
+  - text:
+      position: {x: 25, y: 25}
+      content: "👆 上スワイプ: そのまま | 👈 左スワイプ: 森へ | 👉 右スワイプ: 街へ"
+  
+  - text:
+      position: {x: 35, y: 26}
+      content: "🚫 UIを無視してタイムラインに集中: [無視モード]"
+  
+  # Current status
+  - text:
+      position: {x: 30, y: 28}
+      content: "現在: 移動選択中 | GM待機中 | 制限時間: 30秒"

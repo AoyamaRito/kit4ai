@@ -1,0 +1,225 @@
+canvas:
+  width: 120
+  height: 45
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "🌲 Fake Gods TRPG - 森のシーン・雪渓タイムライン"
+  
+  - text:
+      position: {x: 80, y: 1}
+      content: "📍 深い森の奥 | Lv.1 HP:20/20 EXP:0 💰$0.0067"
+
+  # Left Status Panel 
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 18, height: 42}
+      title: "⚔️ 状態"
+  
+  - text:
+      position: {x: 2, y: 5}
+      content: "🌲 深い森"
+  
+  - text:
+      position: {x: 2, y: 6}
+      content: "🌙 夜間"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "🌧️ 小雨"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "HP:[████░]20/20"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "MP:[██░░░]6/15"
+  
+  # Current scene illustration flowing down
+  - text:
+      position: {x: 2, y: 12}
+      content: "   🌲🌲🌲"
+  
+  - text:
+      position: {x: 2, y: 13}
+      content: " 🌲🦉🌲🌲"
+  
+  - text:
+      position: {x: 2, y: 14}
+      content: "🌲🌲🌲🐺🌲"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: " 🌲🌲🌲🌲"
+
+  # Main Timeline Area with Forest Illustrations Flowing
+  - box:
+      position: {x: 18, y: 3}
+      size: {width: 102, height: 42}
+      title: "🌨️ 森のタイムライン - イラストが雪のように流れ落ちる..."
+  
+  # Timeline with forest ASCII art flowing down
+  - text:
+      position: {x: 20, y: 5}
+      content: "14:45:12 🎭 GM: 深い森に足を踏み入れる...    🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲 ❄️"
+  
+  - text:
+      position: {x: 20, y: 6}
+      content: "14:45:15 ⚔️ 青年: 「この森...何か変だ」      🌲   🦉   🌲   🐺   🌲 ❄️"
+  
+  - text:
+      position: {x: 20, y: 7}
+      content: "14:45:18 🎭 GM: 木々が風もないのに揺れる        🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲 ❄️"
+  
+  - text:
+      position: {x: 20, y: 8}
+      content: "14:45:21 👧 エリナ: 「不気味...」                 🌙     🌟     🌙 ❄️"
+  
+  - text:
+      position: {x: 20, y: 9}
+      content: "14:45:24 🎭 GM: 遠くでオオカミの遠吠え...      🌲🐺   ｱｵｰﾝ   🐺🌲 ❄️"
+  
+  - text:
+      position: {x: 20, y: 10}
+      content: "14:45:27 🦉 フクロウ: 「ホーホー、迷子かの」    🌲🌲🦉🌲🌲🌲🌲🌲🌲 ❄️"
+  
+  - text:
+      position: {x: 20, y: 11}
+      content: "14:45:30 ⚔️ 青年: 「話せる...！？」             🌧️ 🌧️ 🌧️ 🌧️ 🌧️ ❄️"
+  
+  - text:
+      position: {x: 20, y: 12}
+      content: "14:45:33 🎭 GM: 小雨が降り始める...           🌲💧🌲💧🌲💧🌲💧🌲 ❄️"
+  
+  - text:
+      position: {x: 20, y: 13}
+      content: "14:45:36 🧚‍♀️ ルナ: 「森での行動ルール説明！」     🍄   🌿   🍄   🌿 ❄️"
+  
+  - text:
+      position: {x: 20, y: 14}
+      content: "14:45:39 🎭 GM: 光る茸が道を照らす...         🌲✨🍄✨🍄✨🌲✨ ❄️"
+  
+  - text:
+      position: {x: 20, y: 15}
+      content: "14:45:42 👧 エリナ: 「綺麗...でも危険そう」       🌲🕷️🌲🕷️🌲🕷️🌲 ❄️"
+  
+  # New messages with more detailed forest art
+  - text:
+      position: {x: 20, y: 16}
+      content: "14:45:45 🎭 GM: ≫ 茂みから何かが...           🌲👁️🌲👁️🌲👁️🌲 ❄️❄️"
+  
+  - text:
+      position: {x: 20, y: 17}
+      content: "14:45:48 💭 選択待ち...                        🌲❓🌲❓🌲❓🌲 ❄️❄️"
+  
+  # Large forest scene flowing
+  - text:
+      position: {x: 20, y: 19}
+      content: "        🌙✨ 夜の森の全景 ✨🌙                           ❄️"
+  
+  - text:
+      position: {x: 20, y: 20}
+      content: "      🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲🌲                      ❄️"
+  
+  - text:
+      position: {x: 20, y: 21}
+      content: "    🌲🦉🌲🐺🌲🕷️🌲🍄🌲👁️🌲                    ❄️"
+  
+  - text:
+      position: {x: 20, y: 22}
+      content: "  🌲🌲🌲🌲🌲✨🌲🌲🌲🌲🌲🌲                    ❄️"
+  
+  - text:
+      position: {x: 20, y: 23}
+      content: "🌧️💧🌲🌲🌲🌲🌲🌲🌲🌲🌲🌧️                  ❄️"
+  
+  # Input area
+  - text:
+      position: {x: 20, y: 25}
+      content: "┌──────────────────────────────────────────────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 20, y: 26}
+      content: "│ 🌲 森での行動を入力... 森のイラストが雪のように流れています            │"
+  
+  - text:
+      position: {x: 20, y: 27}
+      content: "│ > フクロウに「この森の秘密を教えて」と話しかける_                      │"
+  
+  - text:
+      position: {x: 20, y: 28}
+      content: "└──────────────────────────────────────────────────────────────────────────────────┘"
+  
+  # Environment status
+  - text:
+      position: {x: 20, y: 30}
+      content: "🌲 環境効果: 夜間(-10%視界) 小雨(-5%移動) 森の加護(+20%自然魔法)"
+  
+  - text:
+      position: {x: 20, y: 31}
+      content: "🦉 発見: フクロウ(友好) 🐺 警戒: オオカミ群(遠距離) 🕷️ 注意: 毒蜘蛛(近く)"
+  
+  # Scene illustration continuing to flow
+  - text:
+      position: {x: 20, y: 33}
+      content: "━━━━━━━━━━━━━━━ 🌲 森のイラストストリーム 🌲 ━━━━━━━━━━━━━━━━"
+  
+  - text:
+      position: {x: 20, y: 34}
+      content: "🌲🌲🌲  🦉ホーホー  🌲🌲🌲  🐺ワオーン  🌲🌲🌲  ❄️❄️❄️"
+  
+  - text:
+      position: {x: 20, y: 35}
+      content: "🍄✨💧  🕷️カサカサ  💧✨🍄  🌧️ポツポツ  🍄✨💧  ❄️❄️❄️"
+  
+  - text:
+      position: {x: 20, y: 36}
+      content: "🌿🌙🌟  👁️ジー...  🌟🌙🌿  🌲ザワザワ  🌿🌙🌟  ❄️❄️❄️"
+  
+  # Live forest activity
+  - text:
+      position: {x: 20, y: 38}
+      content: "🔴 LIVE森情報 | 🦉 フクロウ活発 | 🐺 オオカミ接近中 | 🌧️ 雨強くなる"
+  
+  - text:
+      position: {x: 20, y: 39}
+      content: "🌨️ イラスト雪渓: 森の絵が15秒ごとに更新 | 天候: リアルタイム変化"
+  
+  # Snow effects in forest theme
+  - text:
+      position: {x: 115, y: 5}
+      content: "🌲❄️"
+  
+  - text:
+      position: {x: 117, y: 7}
+      content: "🍄❄️"
+  
+  - text:
+      position: {x: 116, y: 9}
+      content: "🦉❄️"
+  
+  - text:
+      position: {x: 118, y: 11}
+      content: "🐺❄️"
+  
+  - text:
+      position: {x: 115, y: 13}
+      content: "🌧️❄️"
+  
+  - text:
+      position: {x: 117, y: 15}
+      content: "✨❄️"
+  
+  # Bottom controls
+  - text:
+      position: {x: 20, y: 42}
+      content: "[SPACE]ポーズ 🌲 | [F]森情報 🦉 | [W]天候 🌧️ | [M]マップ 🗺️ | [ESC]メニュー"
+  
+  - text:
+      position: {x: 20, y: 43}
+      content: "🌨️❄️ 森のイラストが雪のように降り続けています... 現在のシーン更新速度: 🌲 3秒"

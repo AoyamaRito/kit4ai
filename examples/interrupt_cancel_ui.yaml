@@ -1,0 +1,95 @@
+canvas:
+  width: 50
+  height: 30
+  japanese_mode: true
+
+elements:
+  # Emergency Interrupt Button (Top Right)
+  - box:
+      position: {x: 35, y: 0}
+      size: {width: 15, height: 4}
+      title: "🛑 緊急"
+  
+  - text:
+      position: {x: 37, y: 1}
+      content: "🛑 割り込み"
+  
+  - text:
+      position: {x: 38, y: 2}
+      content: "タップ可能"
+
+  # Current Processing
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 30, height: 4}
+      title: "🤖 AI処理中"
+  
+  - text:
+      position: {x: 2, y: 1}
+      content: "🎭 GM台詞生成中... 3秒後に表示"
+  
+  - text:
+      position: {x: 2, y: 2}
+      content: "💭 キューに2件待機中"
+
+  # Current Speech Display
+  - box:
+      position: {x: 0, y: 4}
+      size: {width: 50, height: 12}
+      title: "👹 ゴブリン発言中"
+  
+  - text:
+      position: {x: 22, y: 6}
+      content: "👹"
+  
+  - text:
+      position: {x: 19, y: 8}
+      content: "ゴブリン"
+  
+  - text:
+      position: {x: 5, y: 10}
+      content: "「ガアア！人間め、覚悟しろ！」"
+  
+  - text:
+      position: {x: 15, y: 12}
+      content: "次の台詞: GM→処理中"
+  
+  - text:
+      position: {x: 15, y: 13}
+      content: "予定: 「ゴブリンが襲いかかる」"
+
+  # Interrupt Dialog (When activated)
+  - box:
+      position: {x: 5, y: 16}
+      size: {width: 40, height: 10}
+      title: "🛑 割り込み処理"
+  
+  - text:
+      position: {x: 7, y: 18}
+      content: "次のGM台詞をキャンセルしますか？"
+  
+  - text:
+      position: {x: 7, y: 19}
+      content: "予定台詞: 「ゴブリンが襲いかかる...」"
+  
+  - text:
+      position: {x: 7, y: 21}
+      content: "🛑 [キャンセル] - GM台詞を停止"
+  
+  - text:
+      position: {x: 7, y: 22}
+      content: "⚡ [割り込み発言] - すぐ話す"
+  
+  - text:
+      position: {x: 7, y: 23}
+      content: "🔄 [続行] - そのまま進める"
+
+  # Player Quick Action
+  - box:
+      position: {x: 0, y: 26}
+      size: {width: 50, height: 4}
+      title: "⚡ 緊急アクション"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "💬 [今すぐ発言] 🛡️ [防御] ⚔️ [反撃] 🏃 [逃げる]"

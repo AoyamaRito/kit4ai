@@ -1,0 +1,105 @@
+canvas:
+  width: 50
+  height: 30
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 50, height: 2}
+      title: "🎭 Fake Gods"
+  
+  - text:
+      position: {x: 20, y: 1}
+      content: "14:35 | 村外れの神社"
+
+  # Current Speaker Focus
+  - box:
+      position: {x: 0, y: 2}
+      size: {width: 50, height: 12}
+      title: "👸 姫の発言"
+  
+  # Large Character Display
+  - text:
+      position: {x: 20, y: 4}
+      content: "👸"
+  
+  - text:
+      position: {x: 18, y: 5}
+      content: "お姫様"
+  
+  # Speech Bubble
+  - text:
+      position: {x: 5, y: 7}
+      content: "┌──────────────────────────────────┐"
+  
+  - text:
+      position: {x: 5, y: 8}
+      content: "│「ありがとうございます...           │"
+  
+  - text:
+      position: {x: 5, y: 9}
+      content: "│ でも、あのゴブリンが...          │"
+  
+  - text:
+      position: {x: 5, y: 10}
+      content: "│ 私一人では怖くて...」           │"
+  
+  - text:
+      position: {x: 5, y: 11}
+      content: "└──────────────────────────────────┘"
+  
+  # Character Status
+  - text:
+      position: {x: 2, y: 13}
+      content: "状態: 不安、助けを求めている"
+
+  # Scene Context (Minimal)
+  - box:
+      position: {x: 0, y: 14}
+      size: {width: 50, height: 4}
+      title: "🎮 現在のシーン"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "夕暮れの神社、👸姫が👹ゴブリンに脅されている"
+  
+  - text:
+      position: {x: 2, y: 17}
+      content: "👦青年と👧エリナが近づいてきた"
+
+  # Response Options
+  - box:
+      position: {x: 0, y: 18}
+      size: {width: 50, height: 8}
+      title: "💭 どう応答しますか？"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "💬 [話しかける] - 「大丈夫、守ります」"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "⚔️ [戦闘開始] - ゴブリンに立ち向かう"
+  
+  - text:
+      position: {x: 2, y: 22}
+      content: "🤝 [協力提案] - 「一緒に逃げましょう」"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "🔍 [状況確認] - 周囲を詳しく調べる"
+  
+  - text:
+      position: {x: 2, y: 24}
+      content: "💭 [カスタム] - 自由に入力"
+
+  # Navigation
+  - text:
+      position: {x: 5, y: 27}
+      content: "[次へ ▶️] [前の発言 ◀️] [タイムライン 📋]"
+  
+  - text:
+      position: {x: 10, y: 28}
+      content: "🌨️ 雪渓モード: 自動で次に進む"

@@ -1,0 +1,177 @@
+canvas:
+  width: 100
+  height: 35
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 100, height: 3}
+      title: "🎭 Fake Gods TRPG - メイン画面"
+  
+  - text:
+      position: {x: 70, y: 1}
+      content: "Lv.1 HP:20/20 EXP:0"
+
+  # Left Panel - Player Status
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 25, height: 15}
+      title: "⚔️ 冒険者ステータス"
+  
+  - text:
+      position: {x: 2, y: 5}
+      content: "レベル: 1"
+  
+  - text:
+      position: {x: 2, y: 6}
+      content: "HP: [████████░░] 20/20"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "手札: 1/1 枚"
+  
+  - text:
+      position: {x: 2, y: 8}
+      content: "経験値: 0 EXP"
+  
+  # Current Location
+  - box:
+      position: {x: 0, y: 18}
+      size: {width: 25, height: 8}
+      title: "📍 現在の状況"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "場所: 村外れの神社"
+  
+  - text:
+      position: {x: 2, y: 22}
+      content: "状況: ゴブリン遭遇"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "準備中..."
+
+  # Cards Panel
+  - box:
+      position: {x: 0, y: 26}
+      size: {width: 25, height: 9}
+      title: "🎴 所持カード"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "┌─────────────┐"
+  
+  - text:
+      position: {x: 2, y: 29}
+      content: "│⚔️ショートソード│"
+  
+  - text:
+      position: {x: 2, y: 30}
+      content: "│攻撃力 +2     │"
+  
+  - text:
+      position: {x: 2, y: 31}
+      content: "│[Common]      │"
+  
+  - text:
+      position: {x: 2, y: 32}
+      content: "└─────────────┘"
+
+  # Main Chat Area
+  - box:
+      position: {x: 25, y: 3}
+      size: {width: 75, height: 23}
+      title: "🎭 琴葉織姫キュー管理システム"
+  
+  # Queue Status
+  - text:
+      position: {x: 27, y: 5}
+      content: "キュー状況: 待機:0 処理中:0 完了:1 💰セッション:$0.0012"
+  
+  # Opening Narration
+  - text:
+      position: {x: 27, y: 7}
+      content: "╔═══════════════════════════════════════════════════════════════════════╗"
+  
+  - text:
+      position: {x: 27, y: 8}
+      content: "║ 🎭 ゲームマスター                     TRPGセッション開始           ║"
+  
+  - text:
+      position: {x: 27, y: 9}
+      content: "╟───────────────────────────────────────────────────────────────────────╢"
+  
+  - text:
+      position: {x: 27, y: 10}
+      content: "║ 夕暮れ。村外れの神社に青年とエリナが向かう。                      ║"
+  
+  - text:
+      position: {x: 27, y: 11}
+      content: "║ 青年は決意を秘め、エリナは不安げだ。                              ║"
+  
+  - text:
+      position: {x: 27, y: 12}
+      content: "║ 石鳥居が影を落とす境内に静寂が漂う。                              ║"
+  
+  - text:
+      position: {x: 27, y: 13}
+      content: "║ 森の奥から枝を踏む音が響く。                                      ║"
+  
+  - text:
+      position: {x: 27, y: 14}
+      content: "╚═══════════════════════════════════════════════════════════════════════╝"
+  
+  # Chat History Area
+  - text:
+      position: {x: 27, y: 16}
+      content: "【物語の続きを紡ぐため、質問やアクションを入力してください】"
+  
+  # Input Area
+  - text:
+      position: {x: 27, y: 20}
+      content: "┌─────────────────────────────────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 27, y: 21}
+      content: "│ 質問をキューに追加します...                                         │"
+  
+  - text:
+      position: {x: 27, y: 22}
+      content: "│ > _                                                                 │"
+  
+  - text:
+      position: {x: 27, y: 23}
+      content: "└─────────────────────────────────────────────────────────────────────┘"
+  
+  - text:
+      position: {x: 27, y: 24}
+      content: "[キューに追加] キュー管理: 琴葉織姫 | 処理: 各AI自動実行"
+
+  # Action Bar
+  - box:
+      position: {x: 25, y: 26}
+      size: {width: 75, height: 9}
+      title: "⚡ アクションコマンド"
+  
+  - text:
+      position: {x: 27, y: 28}
+      content: "[⚔️ 攻撃]  [🛡️ 防御]  [🧪アイテム]  [🔮 魔法]  [💬 交渉]"
+  
+  - text:
+      position: {x: 27, y: 30}
+      content: "現在選択可能なアクション:"
+  
+  - text:
+      position: {x: 27, y: 31}
+      content: "• ショートソードで攻撃"
+  
+  - text:
+      position: {x: 27, y: 32}
+      content: "• 身を守る"
+  
+  - text:
+      position: {x: 27, y: 33}
+      content: "• ゴブリンと交渉を試みる"

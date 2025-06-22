@@ -1,0 +1,248 @@
+canvas:
+  width: 120
+  height: 40
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "🎭 Fake Gods TRPG - タイムライン雪渓UI"
+  
+  - text:
+      position: {x: 90, y: 1}
+      content: "Lv.1 HP:20/20 EXP:0 💰$0.0024"
+
+  # Left Status Panel (Narrow)
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 20, height: 37}
+      title: "⚔️ ステータス"
+  
+  - text:
+      position: {x: 2, y: 5}
+      content: "LV: 1"
+  
+  - text:
+      position: {x: 2, y: 6}
+      content: "HP: [████░] 20/20"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "手札: 1/1"
+  
+  # Cards (Compact)
+  - text:
+      position: {x: 2, y: 9}
+      content: "┌──────────┐"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "│⚔️ ソード │"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "│ATK +2   │"
+  
+  - text:
+      position: {x: 2, y: 12}
+      content: "└──────────┘"
+  
+  # Location Info
+  - text:
+      position: {x: 2, y: 14}
+      content: "📍 村外れ神社"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "👹 ゴブリン遭遇"
+  
+  # Action Buttons (Vertical)
+  - text:
+      position: {x: 2, y: 17}
+      content: "[⚔️]攻撃"
+  
+  - text:
+      position: {x: 2, y: 18}
+      content: "[🛡️]防御"
+  
+  - text:
+      position: {x: 2, y: 19}
+      content: "[🧪]薬"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "[🔮]魔法"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "[💬]交渉"
+
+  # Main Timeline Area (Wider)
+  - box:
+      position: {x: 20, y: 3}
+      size: {width: 100, height: 37}
+      title: "🌨️ タイムライン - リアルタイム更新中..."
+  
+  # Timeline Messages (Scrolling Effect)
+  - text:
+      position: {x: 22, y: 5}
+      content: "14:32:15 🎭 GM: 夕暮れの神社に静寂が漂う..."
+  
+  - text:
+      position: {x: 22, y: 6}
+      content: "14:32:18 ⚔️ 青年: 「エリナ、俺は...」"
+  
+  - text:
+      position: {x: 22, y: 7}
+      content: "14:32:21 👧 エリナ: 「どうしたの？」"
+  
+  - text:
+      position: {x: 22, y: 8}
+      content: "14:32:24 🎭 GM: 突然、茂みがガサガサと..."
+  
+  - text:
+      position: {x: 22, y: 9}
+      content: "14:32:27 👹 ゴブリン: 「ガアア！ニンゲン！」"
+  
+  - text:
+      position: {x: 22, y: 10}
+      content: "14:32:30 ☀️ アマテラス: 「冒険者よ、試練の時じゃ」"
+  
+  - text:
+      position: {x: 22, y: 11}
+      content: "14:32:33 🧚‍♀️ ルナ: 「戦闘ルールを説明するね！」"
+  
+  - text:
+      position: {x: 22, y: 12}
+      content: "14:32:36 🎭 GM: 青年が剣に手をかける"
+  
+  - text:
+      position: {x: 22, y: 13}
+      content: "14:32:39 👧 エリナ: 「危ない！」"
+  
+  - text:
+      position: {x: 22, y: 14}
+      content: "14:32:42 ⚔️ 青年: 「エリナを守る！」"
+  
+  # New messages appearing (with animation indicators)
+  - text:
+      position: {x: 22, y: 15}
+      content: "14:32:45 🎭 GM: ≫ ゴブリンが威嚇する... ❄️"
+  
+  - text:
+      position: {x: 22, y: 16}
+      content: "14:32:48 💭 ユーザー入力待ち... ❄️❄️"
+  
+  # Snow effect indicators in margins
+  - text:
+      position: {x: 115, y: 5}
+      content: "❄️"
+  
+  - text:
+      position: {x: 117, y: 7}
+      content: "❄️"
+  
+  - text:
+      position: {x: 116, y: 9}
+      content: "❄️"
+  
+  - text:
+      position: {x: 118, y: 11}
+      content: "❄️"
+  
+  - text:
+      position: {x: 115, y: 13}
+      content: "❄️"
+  
+  # Input area with timeline styling
+  - text:
+      position: {x: 22, y: 18}
+      content: "┌────────────────────────────────────────────────────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 22, y: 19}
+      content: "│ 💬 新しいメッセージをタイムラインに追加...                                             │"
+  
+  - text:
+      position: {x: 22, y: 20}
+      content: "│ > ゴブリンに「話し合いましょう」と呼びかける_                                         │"
+  
+  - text:
+      position: {x: 22, y: 21}
+      content: "└────────────────────────────────────────────────────────────────────────────────────────┘"
+  
+  # Queue status with snow theme
+  - text:
+      position: {x: 22, y: 23}
+      content: "🌨️ キュー状況: ❄️待機:1 ❄️処理中:0 ❄️完了:15 | 琴葉織姫が雪のように舞い踊る..."
+  
+  # Recent activity stream
+  - text:
+      position: {x: 22, y: 25}
+      content: "━━━━━━━━━━━━━━━━━ 最新アクティビティ ━━━━━━━━━━━━━━━━━"
+  
+  - text:
+      position: {x: 22, y: 26}
+      content: "• AIキャラクター応答中... ❄️❄️❄️"
+  
+  - text:
+      position: {x: 22, y: 27}
+      content: "• コスト計算: 入力トークン:245 出力トークン:892"
+  
+  - text:
+      position: {x: 22, y: 28}
+      content: "• セッション時間: 00:05:42"
+  
+  - text:
+      position: {x: 22, y: 29}
+      content: "• 次の更新まで: 3秒... ❄️"
+  
+  # Live indicators
+  - text:
+      position: {x: 22, y: 31}
+      content: "🔴 LIVE | 🎭 GM準備中 | 👧 エリナ考え中 | ⚔️ 青年待機中"
+  
+  # Auto-scroll message
+  - text:
+      position: {x: 22, y: 33}
+      content: "▼ 新しいメッセージが雪のように降り続いています... ▼"
+  
+  - text:
+      position: {x: 22, y: 34}
+      content: "[自動スクロール: ON] [雪効果: ON] [リアルタイム更新: 3秒間隔]"
+  
+  # More snow effects
+  - text:
+      position: {x: 110, y: 15}
+      content: "❄️"
+  
+  - text:
+      position: {x: 112, y: 17}
+      content: "❄️"
+  
+  - text:
+      position: {x: 114, y: 19}
+      content: "❄️"
+  
+  - text:
+      position: {x: 116, y: 21}
+      content: "❄️"
+  
+  - text:
+      position: {x: 111, y: 23}
+      content: "❄️"
+  
+  - text:
+      position: {x: 113, y: 25}
+      content: "❄️"
+  
+  # Bottom status bar
+  - text:
+      position: {x: 22, y: 37}
+      content: "💨 高速更新モード | ❄️ 雪渓エフェクト | 🌊 メッセージの流れ: 15msg/min"
+  
+  - text:
+      position: {x: 22, y: 38}
+      content: "Press [SPACE] to pause ❄️ | [ENTER] to send ⚡ | [ESC] to menu 📋"

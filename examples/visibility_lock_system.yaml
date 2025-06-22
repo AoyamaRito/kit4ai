@@ -1,0 +1,139 @@
+canvas:
+  width: 60
+  height: 30
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 60, height: 3}
+      title: "👁️ 視認ロックシステム"
+  
+  - text:
+      position: {x: 35, y: 1}
+      content: "見たらキャンセル不可 | 生成中:3件 | 🛑割り込み:2秒"
+
+  # Currently Visible (LOCKED)
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 30, height: 10}
+      title: "👁️ 表示中 (確定済み)"
+  
+  - text:
+      position: {x: 12, y: 5}
+      content: "👸 姫"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "「ありがとうございます...」"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "🔒 視認済み → キャンセル不可"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "次の表示まで: 2秒"
+
+  # Pre-generated Queue (CANCELABLE)
+  - box:
+      position: {x: 30, y: 3}
+      size: {width: 30, height: 15}
+      title: "🤖 事前生成 (キャンセル可能)"
+  
+  - text:
+      position: {x: 32, y: 5}
+      content: "待機中の台詞:"
+  
+  - text:
+      position: {x: 32, y: 7}
+      content: "📝 #3: 👹ゴブリン"
+  
+  - text:
+      position: {x: 32, y: 8}
+      content: "「ガアア！邪魔するな！」"
+  
+  - text:
+      position: {x: 32, y: 9}
+      content: "状態: ⏳未表示 = 🛑可能"
+  
+  - text:
+      position: {x: 32, y: 11}
+      content: "📝 #4: 🎭GM"
+  
+  - text:
+      position: {x: 32, y: 12}
+      content: "「ゴブリンが襲いかかる」"
+  
+  - text:
+      position: {x: 32, y: 13}
+      content: "状態: ⏳未表示 = 🛑可能"
+  
+  - text:
+      position: {x: 32, y: 15}
+      content: "📝 #5: 👦青年"
+  
+  - text:
+      position: {x: 32, y: 16}
+      content: "「危ない！」"
+  
+  - text:
+      position: {x: 32, y: 17}
+      content: "状態: ⏳未表示 = 🛑可能"
+
+  # Interrupt Window (Time-sensitive)
+  - box:
+      position: {x: 0, y: 13}
+      size: {width: 30, height: 8}
+      title: "⚡ 割り込み窓口"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "🛑 割り込み可能時間: 2秒"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "┌──────────────────────┐"
+  
+  - text:
+      position: {x: 2, y: 17}
+      content: "│████████░░░░░░░░░░░░│ 40%"
+  
+  - text:
+      position: {x: 2, y: 18}
+      content: "└──────────────────────┘"
+  
+  - text:
+      position: {x: 2, y: 19}
+      content: "⚠️ 0秒後にゴブリン台詞確定"
+
+  # System Rules
+  - box:
+      position: {x: 0, y: 21}
+      size: {width: 60, height: 9}
+      title: "📋 視認ロックルール"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "✅ 表示済み台詞: 🔒確定 → 物語に組み込み済み"
+  
+  - text:
+      position: {x: 2, y: 24}
+      content: "⏳ 未表示台詞: 🛑キャンセル可能 → 割り込みで破棄"
+  
+  - text:
+      position: {x: 2, y: 25}
+      content: "🔄 表示直前: ⚡最後のチャンス → 2秒以内に決断"
+  
+  - text:
+      position: {x: 2, y: 26}
+      content: "👁️ 視認瞬間: 🔒即座に確定 → 取り消し不可"
+  
+  - text:
+      position: {x: 2, y: 27}
+      content: "📝 再生成: 確定台詞以降から → 一貫性保持"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "⚡ 緊急度: 表示直前ほど重要 → 物語の分岐点"

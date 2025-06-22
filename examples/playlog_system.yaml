@@ -1,0 +1,155 @@
+canvas:
+  width: 60
+  height: 35
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 60, height: 3}
+      title: "📜 プレイログ管理システム"
+  
+  - text:
+      position: {x: 40, y: 1}
+      content: "生成済み:5件 | 表示中:2件 | 🛑割り込み可能"
+
+  # Current Display
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 35, height: 12}
+      title: "🎬 現在表示中"
+  
+  - text:
+      position: {x: 15, y: 5}
+      content: "👸 姫"
+  
+  - text:
+      position: {x: 2, y: 7}
+      content: "「ありがとうございます、勇敢な方...」"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "状態: ✅ 表示済み (Entry #2)"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "次: 👹ゴブリン「ガアア！」"
+  
+  - text:
+      position: {x: 2, y: 13}
+      content: "🔄 3秒後に自動表示"
+
+  # Pre-generated Log
+  - box:
+      position: {x: 35, y: 3}
+      size: {width: 25, height: 20}
+      title: "🤖 事前生成ログ"
+  
+  - text:
+      position: {x: 37, y: 5}
+      content: "Entry #1: ✅表示済み"
+  
+  - text:
+      position: {x: 37, y: 6}
+      content: "🎭GM「夕暮れ時...」"
+  
+  - text:
+      position: {x: 37, y: 8}
+      content: "Entry #2: ✅表示中"
+  
+  - text:
+      position: {x: 37, y: 9}
+      content: "👸姫「ありがとう...」"
+  
+  - text:
+      position: {x: 37, y: 11}
+      content: "Entry #3: ⏳待機中"
+  
+  - text:
+      position: {x: 37, y: 12}
+      content: "👹ゴブリン「ガアア！」"
+  
+  - text:
+      position: {x: 37, y: 14}
+      content: "Entry #4: ⏳待機中"
+  
+  - text:
+      position: {x: 37, y: 15}
+      content: "🎭GM「ゴブリンが襲う」"
+  
+  - text:
+      position: {x: 37, y: 17}
+      content: "Entry #5: ⏳待機中"
+  
+  - text:
+      position: {x: 37, y: 18}
+      content: "👦青年「危ない！」"
+  
+  - text:
+      position: {x: 37, y: 20}
+      content: "━━━━━━━━━━━━━━━━━━━━━"
+  
+  - text:
+      position: {x: 37, y: 21}
+      content: "🛑 割り込み地点"
+
+  # Interrupt Dialog
+  - box:
+      position: {x: 0, y: 15}
+      size: {width: 35, height: 12}
+      title: "🛑 割り込み発生！"
+  
+  - text:
+      position: {x: 2, y: 17}
+      content: "プレイヤー割り込み検出"
+  
+  - text:
+      position: {x: 2, y: 18}
+      content: "Entry #3以降を破棄しますか？"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "破棄対象:"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "- 👹ゴブリン「ガアア！」"
+  
+  - text:
+      position: {x: 2, y: 22}
+      content: "- 🎭GM「ゴブリンが襲う」"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "- 👦青年「危ない！」"
+  
+  - text:
+      position: {x: 2, y: 25}
+      content: "[🗑️破棄&再生成] [🔄続行] [⏸️一時停止]"
+
+  # Regeneration Status
+  - box:
+      position: {x: 0, y: 27}
+      size: {width: 60, height: 8}
+      title: "🔄 再生成プロセス"
+  
+  - text:
+      position: {x: 2, y: 29}
+      content: "1. Entry #3以降を削除 ✅"
+  
+  - text:
+      position: {x: 2, y: 30}
+      content: "2. プレイヤー発言を挿入 ✅ 👦「待って！話し合おう！」"
+  
+  - text:
+      position: {x: 2, y: 31}
+      content: "3. 新しい文脈でAI応答生成中... 🔄"
+  
+  - text:
+      position: {x: 2, y: 32}
+      content: "4. 生成予定: 👹ゴブリン → 👸姫 → 🎭GM"
+  
+  - text:
+      position: {x: 2, y: 33}
+      content: "進行度: [████████░░] 80% | 残り時間: 5秒"

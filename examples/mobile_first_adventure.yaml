@@ -1,0 +1,127 @@
+canvas:
+  width: 50
+  height: 40
+  japanese_mode: true
+
+elements:
+  # Mobile Header (Compact)
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 50, height: 3}
+      title: "🎭 Fake Gods"
+  
+  - text:
+      position: {x: 25, y: 1}
+      content: "Lv.1 HP:20/20 📍神社"
+
+  # Scene Area (Main Focus)
+  - box:
+      position: {x: 0, y: 3}
+      size: {width: 50, height: 12}
+      title: "🎮 夕暮れの神社"
+  
+  # Simplified Scene Layout
+  - text:
+      position: {x: 15, y: 5}
+      content: "🌅 夕暮れ 🌅"
+  
+  - text:
+      position: {x: 10, y: 7}
+      content: "      ⛩️ 石鳥居 ⛩️"
+  
+  - text:
+      position: {x: 5, y: 9}
+      content: "👸       🌸       🦉"
+  
+  - text:
+      position: {x: 5, y: 10}
+      content: "姫    👦💕👧   フクロウ"
+  
+  - text:
+      position: {x: 10, y: 12}
+      content: "    👹 ゴブリン"
+  
+  - text:
+      position: {x: 2, y: 13}
+      content: "タップして選択"
+
+  # Selection Status
+  - box:
+      position: {x: 0, y: 15}
+      size: {width: 50, height: 3}
+      title: "選択中"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "👸 姫 - 困っている様子、助けが必要"
+
+  # Action Menu (Horizontal Scroll)
+  - box:
+      position: {x: 0, y: 18}
+      size: {width: 50, height: 4}
+      title: "📋 アクション (← → スクロール)"
+  
+  - text:
+      position: {x: 2, y: 20}
+      content: "💬話す 🔍調べる 👋手振り 🎁渡す ⚔️戦う"
+  
+  - text:
+      position: {x: 2, y: 21}
+      content: "選択: 💬 話しかける [タップで実行]"
+
+  # Timeline (Collapsible)
+  - box:
+      position: {x: 0, y: 22}
+      size: {width: 50, height: 8}
+      title: "🌨️ タイムライン [展開/折りたたみ]"
+  
+  - text:
+      position: {x: 2, y: 24}
+      content: "14:32 🎭GM: 夕暮れ時、古い神社..."
+  
+  - text:
+      position: {x: 2, y: 25}
+      content: "14:33 👧エリナ: 「怖いよ...」"
+  
+  - text:
+      position: {x: 2, y: 26}
+      content: "14:34 🎭GM: ゴブリンが威嚇している"
+  
+  - text:
+      position: {x: 2, y: 27}
+      content: "14:35 💭システム: 👸姫を選択"
+  
+  - text:
+      position: {x: 2, y: 28}
+      content: "[もっと見る ▼] [雪渓エフェクト: ON]"
+
+  # Input Area (When Needed)
+  - box:
+      position: {x: 0, y: 30}
+      size: {width: 50, height: 6}
+      title: "💬 姫に話しかける"
+  
+  - text:
+      position: {x: 2, y: 32}
+      content: "何と話しかけますか？"
+  
+  - text:
+      position: {x: 2, y: 33}
+      content: "┌────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 2, y: 34}
+      content: "│お姫様、大丈夫ですか？_             │"
+  
+  - text:
+      position: {x: 2, y: 35}
+      content: "└────────────────────────────────────────┘"
+
+  # Mobile Controls
+  - text:
+      position: {x: 5, y: 37}
+      content: "[送信] [キャンセル] [音声入力🎤]"
+  
+  - text:
+      position: {x: 8, y: 38}
+      content: "⚡ タップ操作 | 🌨️ 雪渓モード"

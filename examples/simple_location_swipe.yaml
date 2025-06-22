@@ -1,0 +1,124 @@
+canvas:
+  width: 120
+  height: 25
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "🗺️ 移動選択 - スワイプで移動先を選択"
+  
+  - text:
+      position: {x: 40, y: 1}
+      content: "← 村に戻る    |    森の奥へ    |    そのまま →"
+
+  # Main choice area
+  - box:
+      position: {x: 30, y: 3}
+      size: {width: 60, height: 18}
+      title: "🌲 森の奥に行く"
+  
+  # Current choice illustration
+  - text:
+      position: {x: 45, y: 5}
+      content: "🌲🌲🌲🌲🌲🌲"
+  
+  - text:
+      position: {x: 42, y: 6}
+      content: "🌲🦉🍄✨🐺🌲"
+  
+  - text:
+      position: {x: 45, y: 7}
+      content: "🌙💫🌟💫🌙"
+  
+  - text:
+      position: {x: 48, y: 8}
+      content: "👁️❓👁️"
+  
+  # Choice description
+  - text:
+      position: {x: 32, y: 10}
+      content: "深い森の奥へ向かう..."
+  
+  - text:
+      position: {x: 32, y: 11}
+      content: "🦉 賢いフクロウに会える"
+  
+  - text:
+      position: {x: 32, y: 12}
+      content: "🍄 光る茸で道を照らす"
+  
+  - text:
+      position: {x: 32, y: 13}
+      content: "⚠️ 危険度: ★★★☆☆"
+  
+  - text:
+      position: {x: 32, y: 14}
+      content: "💎 発見: 魔法の素材"
+  
+  - text:
+      position: {x: 32, y: 15}
+      content: "📚 学習: 自然の知識"
+
+  # Left option (Village)
+  - box:
+      position: {x: 2, y: 8}
+      size: {width: 22, height: 10}
+      title: "← 村に戻る"
+  
+  - text:
+      position: {x: 4, y: 10}
+      content: "🏠🏠🏠"
+  
+  - text:
+      position: {x: 4, y: 11}
+      content: "👥💰🛡️"
+  
+  - text:
+      position: {x: 4, y: 12}
+      content: "🍞🧪📜"
+  
+  - text:
+      position: {x: 4, y: 14}
+      content: "安全 ★☆☆☆☆"
+  
+  - text:
+      position: {x: 4, y: 15}
+      content: "買い物・休息"
+
+  # Right option (Stay)
+  - box:
+      position: {x: 96, y: 8}
+      size: {width: 22, height: 10}
+      title: "そのまま →"
+  
+  - text:
+      position: {x: 98, y: 10}
+      content: "⛩️👹⛩️"
+  
+  - text:
+      position: {x: 98, y: 11}
+      content: "⚔️💥🛡️"
+  
+  - text:
+      position: {x: 98, y: 12}
+      content: "🩸⚡🌟"
+  
+  - text:
+      position: {x: 98, y: 14}
+      content: "戦闘 ★★☆☆☆"
+  
+  - text:
+      position: {x: 98, y: 15}
+      content: "ゴブリンと対決"
+
+  # Swipe controls
+  - text:
+      position: {x: 25, y: 22}
+      content: "👈 左スワイプ: 村へ | 👆 タップ: 森へ決定 | 👉 右スワイプ: その場"
+  
+  - text:
+      position: {x: 35, y: 23}
+      content: "🚫 UI無視: タイムラインに集中 | ⏰ 制限時間: 15秒"

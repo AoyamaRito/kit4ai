@@ -1,0 +1,164 @@
+canvas:
+  width: 120
+  height: 35
+  japanese_mode: true
+
+elements:
+  # Header
+  - box:
+      position: {x: 0, y: 0}
+      size: {width: 120, height: 3}
+      title: "📖 物語の選択 - スワイプで選択肢を切り替え"
+  
+  - text:
+      position: {x: 30, y: 1}
+      content: "← 前の選択肢    |    現在の選択    |    次の選択肢 →"
+
+  # Current Story Choice (Center)
+  - box:
+      position: {x: 25, y: 3}
+      size: {width: 70, height: 25}
+      title: "💭 選択2: エリナに真実を告白する"
+  
+  # Story context
+  - text:
+      position: {x: 27, y: 5}
+      content: "━━━━━━━━━━━━━━━━━ 状況 ━━━━━━━━━━━━━━━━━"
+  
+  - text:
+      position: {x: 27, y: 6}
+      content: "夕暮れの神社で二人きり。エリナが不安げに見つめている。"
+  
+  - text:
+      position: {x: 27, y: 7}
+      content: "青年の心に迷いが生まれる。今こそ告白の時なのか...？"
+  
+  # Current choice illustration
+  - text:
+      position: {x: 40, y: 9}
+      content: "⛩️💕 告白シーン 💕⛩️"
+  
+  - text:
+      position: {x: 38, y: 10}
+      content: "👦💬「エリナ、実は...」"
+  
+  - text:
+      position: {x: 42, y: 11}
+      content: "👧❓「え...？」"
+  
+  - text:
+      position: {x: 45, y: 12}
+      content: "💕❤️💕"
+  
+  # Choice effects
+  - text:
+      position: {x: 27, y: 14}
+      content: "━━━━━━━━━━━━━━━━ この選択の結果 ━━━━━━━━━━━━━━━━"
+  
+  - text:
+      position: {x: 27, y: 15}
+      content: "💝 エリナとの関係: 大幅向上"
+  
+  - text:
+      position: {x: 27, y: 16}
+      content: "⚔️ 戦闘への影響: エリナが積極的に参戦"
+  
+  - text:
+      position: {x: 27, y: 17}
+      content: "📚 ストーリー: 恋愛ルートに分岐"
+  
+  - text:
+      position: {x: 27, y: 18}
+      content: "🎯 成功率: 75% (エリナの好感度次第)"
+  
+  # Risk/Reward
+  - text:
+      position: {x: 27, y: 20}
+      content: "⚠️ リスク: 関係がぎこちなくなる可能性"
+  
+  - text:
+      position: {x: 27, y: 21}
+      content: "🌟 報酬: 特別なカード「恋人の絆」を獲得"
+  
+  # Required conditions
+  - text:
+      position: {x: 27, y: 23}
+      content: "📋 必要条件: 勇気ポイント 3以上 (現在: 5)"
+  
+  - text:
+      position: {x: 27, y: 24}
+      content: "⏰ タイミング: 今がベストタイミング"
+
+  # Left choice hint
+  - box:
+      position: {x: 0, y: 8}
+      size: {width: 20, height: 15}
+      title: "← 選択1"
+  
+  - text:
+      position: {x: 2, y: 10}
+      content: "🤐 黙っている"
+  
+  - text:
+      position: {x: 2, y: 12}
+      content: "👦💭"
+  
+  - text:
+      position: {x: 2, y: 13}
+      content: "「まだ早い」"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "安全な選択"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "関係維持"
+  
+  - text:
+      position: {x: 2, y: 18}
+      content: "成功率:90%"
+
+  # Right choice hint
+  - box:
+      position: {x: 100, y: 8}
+      size: {width: 20, height: 15}
+      title: "選択3 →"
+  
+  - text:
+      position: {x: 102, y: 10}
+      content: "⚔️ 戦闘準備"
+  
+  - text:
+      position: {x: 102, y: 12}
+      content: "👦🗡️"
+  
+  - text:
+      position: {x: 102, y: 13}
+      content: "「守るぞ」"
+  
+  - text:
+      position: {x: 102, y: 15}
+      content: "英雄的行動"
+  
+  - text:
+      position: {x: 102, y: 16}
+      content: "戦闘特化"
+  
+  - text:
+      position: {x: 102, y: 18}
+      content: "成功率:60%"
+
+  # Timeline integration
+  - text:
+      position: {x: 15, y: 30}
+      content: "🌨️ タイムライン: この選択後、物語の雪渓が大きく変化します"
+  
+  # Swipe instructions
+  - text:
+      position: {x: 20, y: 32}
+      content: "👈 左スワイプ: 選択1 | 👆 タップ: 選択2決定 | 👉 右スワイプ: 選択3"
+  
+  - text:
+      position: {x: 30, y: 33}
+      content: "🚫 UI無視モード: タイムラインの流れに身を任せる"

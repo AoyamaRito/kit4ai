@@ -1,0 +1,81 @@
+canvas:
+  width: 50
+  height: 30
+  japanese_mode: true
+
+elements:
+  # Player Avatar (Large)
+  - text:
+      position: {x: 22, y: 2}
+      content: "⚔️"
+  
+  - text:
+      position: {x: 18, y: 4}
+      content: "勇敢な青年"
+  
+  - text:
+      position: {x: 20, y: 5}
+      content: "(あなた)"
+
+  # Input Prompt
+  - box:
+      position: {x: 0, y: 7}
+      size: {width: 50, height: 6}
+      title: "💭 あなたの番です"
+  
+  - text:
+      position: {x: 2, y: 9}
+      content: "姫とゴブリンを前に、何と言いますか？"
+  
+  - text:
+      position: {x: 2, y: 11}
+      content: "状況: 👸姫が助けを求めている、👹ゴブリン威嚇中"
+
+  # Speech Input Area
+  - box:
+      position: {x: 0, y: 13}
+      size: {width: 50, height: 8}
+      title: "💬 セリフを入力"
+  
+  - text:
+      position: {x: 2, y: 15}
+      content: "┌────────────────────────────────────────────┐"
+  
+  - text:
+      position: {x: 2, y: 16}
+      content: "│「お姫様、大丈夫ですか？僕が守ります」_   │"
+  
+  - text:
+      position: {x: 2, y: 17}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 2, y: 18}
+      content: "│                                            │"
+  
+  - text:
+      position: {x: 2, y: 19}
+      content: "└────────────────────────────────────────────┘"
+
+  # Quick Options
+  - box:
+      position: {x: 0, y: 21}
+      size: {width: 50, height: 6}
+      title: "⚡ クイック選択"
+  
+  - text:
+      position: {x: 2, y: 23}
+      content: "🛡️ [姫を守る] 🗣️ [ゴブリンと交渉] ⚔️ [戦闘開始]"
+  
+  - text:
+      position: {x: 2, y: 24}
+      content: "💭 [様子を見る] 🤝 [協力を求める] 🏃 [逃げる]"
+
+  # Input Controls
+  - text:
+      position: {x: 5, y: 27}
+      content: "[送信] [音声入力🎤] [キャンセル] [提案💡]"
+  
+  - text:
+      position: {x: 15, y: 28}
+      content: "Enter:送信 | Tab:クイック選択"
